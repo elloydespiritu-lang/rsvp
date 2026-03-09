@@ -11,7 +11,7 @@ export default function Details() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className="font-serif text-5xl md:text-6xl mb-4 text-ink">The Details</h2>
+          <h2 className="font-serif text-5xl md:text-6xl mb-4 text-maroon">The Details</h2>
           <div className="w-24 h-[1px] bg-gold mx-auto"></div>
         </motion.div>
 
@@ -24,12 +24,12 @@ export default function Details() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2 }}
           >
-            <h3 className="font-serif text-4xl text-gold mb-8 italic">Ceremony</h3>
+            <h3 className="font-serif text-4xl text-maroon mb-8 italic">Ceremony</h3>
             
             <div className="space-y-6 font-sans text-ink-light">
               <div className="flex flex-col items-center gap-2">
                 <Calendar className="text-gold" size={24} />
-                <p className="tracking-widest uppercase text-sm font-medium">Saturday, December 31, 2026</p>
+                <p className="tracking-widest uppercase text-sm font-medium">Monday, May 18, 2026</p>
               </div>
               
               <div className="flex flex-col items-center gap-2">
@@ -39,8 +39,8 @@ export default function Details() {
               
               <div className="flex flex-col items-center gap-2">
                 <MapPin className="text-gold" size={24} />
-                <p className="font-medium text-lg text-ink">St. Patrick's Cathedral</p>
-                <p className="text-sm">5th Ave, New York, NY 10022</p>
+                <p className="font-medium text-lg text-ink">Iglesia ni Cristo Lokal ng Marikina Centro</p>
+                <p className="text-sm">Marikina City</p>
               </div>
             </div>
           </motion.div>
@@ -53,23 +53,23 @@ export default function Details() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.4 }}
           >
-            <h3 className="font-serif text-4xl text-gold mb-8 italic">Reception</h3>
+            <h3 className="font-serif text-4xl text-maroon mb-8 italic">Reception</h3>
             
             <div className="space-y-6 font-sans text-ink-light">
               <div className="flex flex-col items-center gap-2">
                 <Calendar className="text-gold" size={24} />
-                <p className="tracking-widest uppercase text-sm font-medium">Saturday, December 31, 2026</p>
+                <p className="tracking-widest uppercase text-sm font-medium">Monday, May 18, 2026</p>
               </div>
               
               <div className="flex flex-col items-center gap-2">
                 <Clock className="text-gold" size={24} />
-                <p className="tracking-widest uppercase text-sm font-medium">6:00 PM - Midnight</p>
+                <p className="tracking-widest uppercase text-sm font-medium">5:00 PM</p>
               </div>
               
               <div className="flex flex-col items-center gap-2">
                 <MapPin className="text-gold" size={24} />
-                <p className="font-medium text-lg text-ink">The Plaza Hotel</p>
-                <p className="text-sm">768 5th Ave, New York, NY 10019</p>
+                <p className="font-medium text-lg text-ink">Rancho Estate IV West Clubhouse</p>
+                <p className="text-sm">Jersey St., Marikina Heights (Concepcion), Marikina City</p>
               </div>
             </div>
           </motion.div>
@@ -84,7 +84,7 @@ export default function Details() {
           transition={{ delay: 0.6 }}
         >
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.18394865616!2d-73.97734868459363!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258fa0a388b3f%3A0x6a053229b380029b!2sSt.%20Patrick&#39;s%20Cathedral!5e0!3m2!1sen!2sus!4v1645564858963!5m2!1sen!2sus" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.283181822818!2d121.11192807510688!3d14.64036198585098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b9b0c2a55555%3A0x8e8b0b0b0b0b0b0b!2sRancho%20Estate%204%20West%20Clubhouse!5e0!3m2!1sen!2sph!4v1710000000000!5m2!1sen!2sph" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 

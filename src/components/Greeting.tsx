@@ -14,7 +14,7 @@ export default function Greeting({ guestName }: GreetingProps) {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-ink mb-10 font-medium leading-tight">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-maroon mb-10 font-medium leading-tight">
             Dear <span className="text-gold italic">{guestName || 'Friend'}</span>,
           </h2>
           

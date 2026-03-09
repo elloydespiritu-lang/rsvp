@@ -21,8 +21,7 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
     setIsSubmitting(true);
 
     try {
-      // In a real app, this would send data to Google Apps Script
-      /*
+      // Send data to Google Apps Script
       await fetch('https://script.google.com/macros/s/AKfycbwn2fPnt4wQd9ipdbandtOquOxr7fGUiQzPc0SosHtgaMGmZcHKiNbriqrP0hYl0Cjkbw/exec', {
         method: 'POST',
         headers: {
@@ -36,10 +35,6 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
           message: formData.message
         })
       });
-      */
-
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
       
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -71,10 +66,12 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
       const particleCount = 50 * (timeLeft / duration);
       confetti({
         ...defaults, particleCount,
+        colors: ['#800000', '#D4AF37', '#F2E6E6'],
         origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
       });
       confetti({
         ...defaults, particleCount,
+        colors: ['#800000', '#D4AF37', '#F2E6E6'],
         origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
       });
     }, 250);
@@ -96,9 +93,9 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
           <div className="absolute bottom-4 right-4 w-16 h-16 border-b border-r border-gold/30"></div>
 
           <div className="text-center mb-12">
-            <h2 className="font-serif text-4xl md:text-5xl mb-4 text-ink">R.S.V.P.</h2>
+            <h2 className="font-serif text-4xl md:text-5xl mb-4 text-maroon">R.S.V.P.</h2>
             <p className="font-sans text-sm uppercase tracking-widest text-gold mb-2">Kindly respond by</p>
-            <p className="font-serif italic text-xl text-ink-light">November 1st, 2026</p>
+            <p className="font-serif italic text-xl text-ink-light">April 18, 2026</p>
           </div>
 
           {isSubmitted ? (
@@ -120,7 +117,7 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
                 <label className="block font-sans text-sm uppercase tracking-widest text-ink-light text-center">
                   Guest Name
                 </label>
-                <div className="text-center font-serif text-2xl text-ink border-b border-gold/30 pb-2">
+                <div className="text-center font-serif text-2xl text-maroon border-b border-gold/30 pb-2">
                   {guestName || 'Honored Guest'}
                 </div>
               </div>
@@ -170,7 +167,7 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
                     <select 
                       value={formData.guests}
                       onChange={(e) => setFormData({...formData, guests: e.target.value})}
-                      className="w-full bg-transparent border-b border-gold/30 py-2 text-center font-serif text-xl focus:outline-none focus:border-gold transition-colors"
+                      className="w-full bg-transparent border-b border-gold/30 py-2 text-center font-serif text-xl text-maroon focus:outline-none focus:border-gold transition-colors"
                     >
                       <option value="1">1</option>
                       <option value="2">2</option>
@@ -189,7 +186,7 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                   rows={3}
-                  className="w-full bg-transparent border-b border-gold/30 py-2 text-center font-serif text-lg focus:outline-none focus:border-gold transition-colors resize-none"
+                  className="w-full bg-transparent border-b border-gold/30 py-2 text-center font-serif text-lg text-maroon focus:outline-none focus:border-gold transition-colors resize-none"
                   placeholder="Leave a wish or dietary requirements..."
                 ></textarea>
               </div>
@@ -198,7 +195,7 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
                 <button 
                   type="submit"
                   disabled={isSubmitting || formData.attendance === 'Pending'}
-                  className="bg-ink text-cream hover:bg-gold hover:text-white transition-all duration-300 px-12 py-4 uppercase tracking-[0.2em] text-sm font-medium rounded-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-maroon text-cream hover:bg-gold hover:text-white transition-all duration-300 px-12 py-4 uppercase tracking-[0.2em] text-sm font-medium rounded-sm disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Sending...' : 'Send RSVP'}
                 </button>

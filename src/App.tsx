@@ -5,10 +5,8 @@ import Hero from './components/Hero';
 import Greeting from './components/Greeting';
 import Details from './components/Details';
 import Countdown from './components/Countdown';
-import Gallery from './components/Gallery';
-import Timeline from './components/Timeline';
 import RSVP from './components/RSVP';
-import Extras from './components/Extras';
+import DressCode from './components/Extras';
 
 export default function App() {
   const [guestName, setGuestName] = useState<string | null>(null);
@@ -34,19 +32,16 @@ export default function App() {
   const fetchGuestData = async (code: string) => {
     setIsLoading(true);
     try {
-      // Simulated API call to Google Apps Script
-      // const response = await fetch(`https://script.google.com/macros/s/AKfycbwn2fPnt4wQd9ipdbandtOquOxr7fGUiQzPc0SosHtgaMGmZcHKiNbriqrP0hYl0Cjkbw/exec`);
-      // const data = await response.json();
+      // API call to Google Apps Script
+      const response = await fetch(`https://script.google.com/macros/s/AKfycbwn2fPnt4wQd9ipdbandtOquOxr7fGUiQzPc0SosHtgaMGmZcHKiNbriqrP0hYl0Cjkbw/exec?action=getGuest&inviteCode=${code}`);
+      const data = await response.json();
       
-      // Mock data for preview
-      setTimeout(() => {
-        if (code === 'INV001') {
-          setGuestName('John & Jane Doe');
-        } else {
-          setGuestName('Honored Guest');
-        }
-        setIsLoading(false);
-      }, 1500);
+      if (data && data.success) {
+        setGuestName(data.guestName);
+      } else {
+        setGuestName('Honored Guest');
+      }
+      setIsLoading(false);
     } catch (error) {
       console.error('Error fetching guest data:', error);
       setGuestName('Honored Guest');
@@ -72,7 +67,7 @@ export default function App() {
         <motion.div
           animate={{ scale: [1, 1.1, 1] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="text-gold font-serif text-3xl italic"
+          className="text-maroon font-serif text-3xl italic"
         >
           Loading...
         </motion.div>
@@ -106,16 +101,14 @@ export default function App() {
         <Hero />
         <Greeting guestName={guestName} />
         <Details />
-        <Countdown targetDate="2026-12-31T15:00:00" />
-        <Gallery />
-        <Timeline />
-        <Extras />
+        <Countdown targetDate="2026-05-18T15:00:00" />
+        <DressCode />
         <RSVP inviteCode={inviteCode} guestName={guestName} />
       </main>
 
-      <footer className="py-12 text-center bg-ink text-cream/60 text-sm font-sans">
+      <footer className="py-12 text-center bg-maroon-dark text-cream/60 text-sm font-sans">
         <p className="font-serif italic text-lg mb-2 text-gold">Thank you for being part of our story.</p>
-        <p>&copy; {new Date().getFullYear()} Emma & James. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Nicole & Elloyd. All rights reserved.</p>
       </footer>
     </div>
   );

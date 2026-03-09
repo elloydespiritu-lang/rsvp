@@ -30,7 +30,7 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.5 }}
         >
-          Emma <span className="text-gold italic font-light">&amp;</span> James
+          Nicole <span className="text-gold italic font-light">&amp;</span> Elloyd
         </motion.h1>
 
         <motion.div
@@ -39,7 +39,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 1 }}
         >
           <p className="font-sans text-lg md:text-xl font-light tracking-widest mb-12 text-cream/90">
-            DECEMBER 31, 2026 &bull; NEW YORK CITY
+            MAY 18, 2026 &bull; MARIKINA CITY
           </p>
           
           <a 

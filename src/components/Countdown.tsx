@@ -51,7 +51,7 @@ export default function Countdown({ targetDate }: CountdownProps) {
   ];
 
   return (
-    <section className="py-24 bg-ink text-cream relative overflow-hidden">
+    <section className="py-24 bg-maroon-dark text-cream relative overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-20"

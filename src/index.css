@@ -12,6 +12,9 @@
   --color-blush-dark: #E6D0D0;
   --color-ink: #2C2A29;
   --color-ink-light: #4A4745;
+  --color-maroon: #800000;
+  --color-maroon-light: #A52A2A;
+  --color-maroon-dark: #4A0404;
 }
 
 body {
