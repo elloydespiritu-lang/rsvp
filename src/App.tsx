@@ -35,7 +35,7 @@ export default function App() {
     setIsLoading(true);
     try {
       // API call to Google Apps Script
-      const response = await fetch(`https://script.google.com/macros/s/AKfycbwWfSQfT3M2bnEliAtoVOtGgKhBVcYwT0Sqd2MNPYQr_IDEtwaAL9LHsuAI3RBlPisCoQ/exec`);
+      const response = await fetch(`https://script.google.com/macros/s/AKfycbxLJaw6LM9cQwuHV7is1rpI8SLQEMXhUbJa6iq5o5bEHcX324KeDtbSFlUlnAYh1x_opA/exec`);
       const data = await response.json();
       
       if (data && data.success) {
