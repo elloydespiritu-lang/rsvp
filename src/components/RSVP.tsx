@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import confetti from 'canvas-confetti';
 
 interface RSVPProps {
@@ -10,7 +10,6 @@ interface RSVPProps {
 export default function RSVP({ inviteCode, guestName }: RSVPProps) {
   const [formData, setFormData] = useState({
     attendance: 'Pending',
-    guests: '1',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -22,7 +21,7 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
 
     try {
       // Send data to Google Apps Script
-      await fetch('https://script.google.com/macros/s/AKfycbwn2fPnt4wQd9ipdbandtOquOxr7fGUiQzPc0SosHtgaMGmZcHKiNbriqrP0hYl0Cjkbw/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbwWfSQfT3M2bnEliAtoVOtGgKhBVcYwT0Sqd2MNPYQr_IDEtwaAL9LHsuAI3RBlPisCoQ/exec', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -31,7 +30,6 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
           action: 'submitRSVP',
           inviteCode: inviteCode || 'UNKNOWN',
           attendance: formData.attendance,
-          guests: formData.guests,
           message: formData.message
         })
       });
@@ -150,31 +148,6 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
                   </label>
                 </div>
               </div>
-
-              <AnimatePresence>
-                {formData.attendance === 'Attending' && (
-                  <motion.div 
-                    className="space-y-2"
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                  >
-                    <label className="block font-sans text-sm uppercase tracking-widest text-ink-light text-center">
-                      Number of Guests
-                    </label>
-                    <select 
-                      value={formData.guests}
-                      onChange={(e) => setFormData({...formData, guests: e.target.value})}
-                      className="w-full bg-transparent border-b border-gold/30 py-2 text-center font-serif text-xl text-maroon focus:outline-none focus:border-gold transition-colors"
-                    >
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                    </select>
-                  </motion.div>
-                )}
-              </AnimatePresence>
 
               <div className="space-y-2">
                 <label className="block font-sans text-sm uppercase tracking-widest text-ink-light text-center">
