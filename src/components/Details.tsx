@@ -34,7 +34,7 @@ export default function Details() {
               
               <div className="flex flex-col items-center gap-2">
                 <Clock className="text-gold" size={24} />
-                <p className="tracking-widest uppercase text-sm font-medium">3:00 PM</p>
+                <p className="tracking-widest uppercase text-sm font-medium">2:30 PM</p>
               </div>
               
               <div className="flex flex-col items-center gap-2">
@@ -57,19 +57,14 @@ export default function Details() {
             
             <div className="space-y-6 font-sans text-ink-light">
               <div className="flex flex-col items-center gap-2">
-                <Calendar className="text-gold" size={24} />
-                <p className="tracking-widest uppercase text-sm font-medium">Monday, May 18, 2026</p>
-              </div>
-              
-              <div className="flex flex-col items-center gap-2">
                 <Clock className="text-gold" size={24} />
-                <p className="tracking-widest uppercase text-sm font-medium">5:00 PM</p>
+                <p className="tracking-widest uppercase text-sm font-medium">4:30 PM</p>
               </div>
               
               <div className="flex flex-col items-center gap-2">
                 <MapPin className="text-gold" size={24} />
                 <p className="font-medium text-lg text-ink">Rancho Estate IV West Clubhouse</p>
-                <p className="text-sm">Jersey St., Marikina Heights (Concepcion), Marikina City</p>
+                <p className="text-sm">Jersey St., Marikina Heights (Concepcion)<br/>Marikina City</p>
               </div>
             </div>
           </motion.div>

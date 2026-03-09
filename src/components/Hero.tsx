@@ -25,12 +25,14 @@ export default function Hero() {
         </motion.div>
 
         <motion.h1 
-          className="font-serif text-6xl md:text-8xl lg:text-9xl mb-6 font-medium tracking-tight"
+          className="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 font-medium tracking-tight flex flex-col items-center gap-2"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.5 }}
         >
-          Nicole <span className="text-gold italic font-light">&amp;</span> Elloyd
+          <span>LLoyd</span>
+          <span className="text-gold italic font-light text-4xl md:text-6xl">&amp;</span>
+          <span>Nicole</span>
         </motion.h1>
 
         <motion.div

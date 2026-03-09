@@ -6,7 +6,6 @@ import Greeting from './components/Greeting';
 import Details from './components/Details';
 import Countdown from './components/Countdown';
 import Gallery from './components/Gallery';
-import Timeline from './components/Timeline';
 import RSVP from './components/RSVP';
 import DressCode from './components/Extras';
 
@@ -105,14 +104,13 @@ export default function App() {
         <Details />
         <Countdown targetDate="2026-05-18T15:00:00" />
         <Gallery />
-        <Timeline />
         <DressCode />
         <RSVP inviteCode={inviteCode} guestName={guestName} />
       </main>
 
       <footer className="py-12 text-center bg-maroon-dark text-cream/60 text-sm font-sans">
         <p className="font-serif italic text-lg mb-2 text-gold">Thank you for being part of our story.</p>
-        <p>&copy; {new Date().getFullYear()} Nicole & Elloyd. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} LLoyd & Nicole. All rights reserved.</p>
       </footer>
     </div>
   );
