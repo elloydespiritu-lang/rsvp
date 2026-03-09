@@ -6,9 +6,11 @@ export default function Hero() {
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ 
-          backgroundImage: 'url("https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=2070&auto=format&fit=crop")',
-        }}
+        style={{
+  backgroundImage: 'url("https://raw.githubusercontent.com/elloydespiritu-lang/rsvp/main/public/hero.png")',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center'
+}}
       >
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
@@ -19,7 +21,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.2 }}
         >
-          <p className="font-sans uppercase tracking-[0.2em] text-sm md:text-base mb-6 text-cream/90">
+          <p className="font-sans uppercase tracking-[0.2em] text-sm md:text-base mb-6" style={{ color: '#E6DED3', textShadow: '0 2px 10px rgba(0,0,0,0.35)' }}>
             Together with our families, we invite you to celebrate our love.
           </p>
         </motion.div>
@@ -29,10 +31,11 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.5 }}
+          style={{ textShadow: '0 2px 10px rgba(0,0,0,0.35)' }}
         >
-          <span>LLoyd</span>
-          <span className="text-gold italic font-light text-4xl md:text-6xl">&amp;</span>
-          <span>Nicole</span>
+          <span style={{ color: '#F7F4EF' }}>LLoyd</span>
+          <span className="italic font-light text-4xl md:text-6xl" style={{ color: '#D4AF37' }}>&amp;</span>
+          <span style={{ color: '#F7F4EF' }}>Nicole</span>
         </motion.h1>
 
         <motion.div
@@ -40,7 +43,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
         >
-          <p className="font-sans text-lg md:text-xl font-light tracking-widest mb-12 text-cream/90">
+          <p className="font-sans text-lg md:text-xl font-light tracking-widest mb-12" style={{ color: '#E8E0D5', textShadow: '0 2px 10px rgba(0,0,0,0.35)' }}>
             MAY 18, 2026
           </p>
           
