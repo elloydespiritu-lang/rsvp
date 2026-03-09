@@ -35,7 +35,7 @@ export default function App() {
     setIsLoading(true);
     try {
       // API call to Google Apps Script
-      const response = await fetch(`https://script.google.com/macros/s/AKfycbzCfpplytVEZe5OraekOVCrPRnTHU1JtimMrIyIyMCm6oJAWfI4NRTHXDs9cCvtPg6B3g/exec`);
+      const response = await fetch(`https://script.google.com/macros/s/AKfycbySiuvSIKvwLzywvIuosnw67HOKZjkfEtHJBovS_G4P2pqr0vvnN8mOse1KA8vG2nz0RA/exec?action=getGuest&inviteCode=${code}`);
       const data = await response.json();
       
       if (data && data.success) {

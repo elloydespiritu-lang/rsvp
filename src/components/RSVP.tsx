@@ -21,7 +21,7 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
 
     try {
       // Send data to Google Apps Script
-      await fetch('https://script.google.com/macros/s/AKfycbzCfpplytVEZe5OraekOVCrPRnTHU1JtimMrIyIyMCm6oJAWfI4NRTHXDs9cCvtPg6B3g/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbySiuvSIKvwLzywvIuosnw67HOKZjkfEtHJBovS_G4P2pqr0vvnN8mOse1KA8vG2nz0RA/exec', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
