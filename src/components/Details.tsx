@@ -18,7 +18,7 @@ export default function Details() {
         <div className="grid md:grid-cols-2 gap-16 lg:gap-24">
           {/* Ceremony */}
           <motion.div 
-            className="flex flex-col items-center text-center p-10 border border-gold/20 rounded-sm bg-cream/50 shadow-sm"
+            className="flex flex-col items-center text-center p-10 border border-gold/20 rounded-2xl bg-cream/50 shadow-lg"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -47,7 +47,7 @@ export default function Details() {
 
           {/* Reception */}
           <motion.div 
-            className="flex flex-col items-center text-center p-10 border border-gold/20 rounded-sm bg-cream/50 shadow-sm"
+            className="flex flex-col items-center text-center p-10 border border-gold/20 rounded-2xl bg-cream/50 shadow-lg"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -77,7 +77,7 @@ export default function Details() {
 
         {/* Map */}
         <motion.div 
-          className="mt-20 rounded-sm overflow-hidden shadow-xl border border-gold/10 h-96 w-full"
+          className="mt-20 rounded-2xl overflow-hidden shadow-xl border border-gold/10 h-96 w-full"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}

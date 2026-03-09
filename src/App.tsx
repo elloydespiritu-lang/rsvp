@@ -5,6 +5,8 @@ import Hero from './components/Hero';
 import Greeting from './components/Greeting';
 import Details from './components/Details';
 import Countdown from './components/Countdown';
+import Gallery from './components/Gallery';
+import Timeline from './components/Timeline';
 import RSVP from './components/RSVP';
 import DressCode from './components/Extras';
 
@@ -102,6 +104,8 @@ export default function App() {
         <Greeting guestName={guestName} />
         <Details />
         <Countdown targetDate="2026-05-18T15:00:00" />
+        <Gallery />
+        <Timeline />
         <DressCode />
         <RSVP inviteCode={inviteCode} guestName={guestName} />
       </main>

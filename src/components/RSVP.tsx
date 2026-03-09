@@ -66,12 +66,12 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
       const particleCount = 50 * (timeLeft / duration);
       confetti({
         ...defaults, particleCount,
-        colors: ['#800000', '#D4AF37', '#F2E6E6'],
+        colors: ['#6B1E1E', '#8B2E2E', '#D98C8C', '#E8B7B2'],
         origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
       });
       confetti({
         ...defaults, particleCount,
-        colors: ['#800000', '#D4AF37', '#F2E6E6'],
+        colors: ['#6B1E1E', '#8B2E2E', '#D98C8C', '#E8B7B2'],
         origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
       });
     }, 250);
@@ -81,7 +81,7 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
     <section id="rsvp" className="py-24 md:py-32 bg-cream text-ink relative">
       <div className="max-w-3xl mx-auto px-6">
         <motion.div 
-          className="bg-white p-8 md:p-16 rounded-sm shadow-xl border border-gold/20 relative overflow-hidden"
+          className="bg-white p-8 md:p-16 rounded-3xl shadow-2xl border border-gold/20 relative overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -104,11 +104,9 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
             >
-              <h3 className="font-serif text-3xl text-gold mb-4 italic">Thank you!</h3>
+              <h3 className="font-serif text-3xl text-gold mb-4 italic">Thank you for your response.</h3>
               <p className="font-sans text-ink-light leading-relaxed">
-                {formData.attendance === 'Attending' 
-                  ? "We can't wait to celebrate with you!" 
-                  : "We will miss you, but thank you for letting us know."}
+                We look forward to celebrating with you.
               </p>
             </motion.div>
           ) : (
@@ -195,7 +193,7 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
                 <button 
                   type="submit"
                   disabled={isSubmitting || formData.attendance === 'Pending'}
-                  className="bg-maroon text-cream hover:bg-gold hover:text-white transition-all duration-300 px-12 py-4 uppercase tracking-[0.2em] text-sm font-medium rounded-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-maroon text-cream hover:bg-gold hover:text-white transition-all duration-300 px-12 py-4 uppercase tracking-[0.2em] text-sm font-medium rounded-full disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
                 >
                   {isSubmitting ? 'Sending...' : 'Send RSVP'}
                 </button>

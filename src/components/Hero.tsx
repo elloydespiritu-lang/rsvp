@@ -7,10 +7,10 @@ export default function Hero() {
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{ 
-          backgroundImage: 'url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop")',
+          backgroundImage: 'url("https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=2070&auto=format&fit=crop")',
         }}
       >
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
@@ -19,8 +19,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.2 }}
         >
-          <p className="font-sans uppercase tracking-[0.3em] text-sm md:text-base mb-6 text-cream/90">
-            We are getting married
+          <p className="font-sans uppercase tracking-[0.2em] text-sm md:text-base mb-6 text-cream/90">
+            Together with our families, we invite you to celebrate our love.
           </p>
         </motion.div>
 
@@ -39,12 +39,12 @@ export default function Hero() {
           transition={{ duration: 1, delay: 1 }}
         >
           <p className="font-sans text-lg md:text-xl font-light tracking-widest mb-12 text-cream/90">
-            MAY 18, 2026 &bull; MARIKINA CITY
+            MAY 18, 2026
           </p>
           
           <a 
-            href="#rsvp"
-            className="inline-block border border-white/50 bg-white/10 backdrop-blur-sm hover:bg-white hover:text-ink transition-all duration-500 px-10 py-4 uppercase tracking-[0.2em] text-sm font-medium rounded-sm"
+            href="#greeting"
+            className="inline-block border border-white/50 bg-white/10 backdrop-blur-sm hover:bg-white hover:text-maroon transition-all duration-500 px-10 py-4 uppercase tracking-[0.2em] text-sm font-medium rounded-full"
           >
             Open Invitation
           </a>

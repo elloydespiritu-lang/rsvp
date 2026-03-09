@@ -1,24 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
 
-  --color-cream: #FDFBF7;
-  --color-gold: #D4AF37;
-  --color-gold-light: #E5C158;
-  --color-blush: #F2E6E6;
-  --color-blush-dark: #E6D0D0;
+  --color-deep-maroon: #6B1E1E;
+  --color-burgundy: #8B2E2E;
+  --color-dusty-rose: #D98C8C;
+  --color-blush-pink: #E8B7B2;
+  --color-soft-cream: #F2F0EE;
+  
+  --color-cream: #F2F0EE;
   --color-ink: #2C2A29;
   --color-ink-light: #4A4745;
-  --color-maroon: #800000;
-  --color-maroon-light: #A52A2A;
+  --color-maroon: #6B1E1E;
+  --color-maroon-light: #8B2E2E;
   --color-maroon-dark: #4A0404;
+  --color-gold: #D4AF37;
 }
 
 body {
-  background-color: var(--color-cream);
+  background-color: var(--color-soft-cream);
   color: var(--color-ink);
   font-family: var(--font-sans);
   overflow-x: hidden;

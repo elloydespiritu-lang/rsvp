@@ -19,7 +19,7 @@ export default function Gallery() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className="font-serif text-5xl md:text-6xl mb-4 text-ink">Moments</h2>
+          <h2 className="font-serif text-5xl md:text-6xl mb-4 text-maroon">Moments</h2>
           <div className="w-24 h-[1px] bg-gold mx-auto"></div>
         </motion.div>
 
@@ -27,7 +27,7 @@ export default function Gallery() {
           {images.map((src, index) => (
             <motion.div 
               key={index}
-              className="relative aspect-[3/4] overflow-hidden rounded-sm group shadow-md"
+              className="relative aspect-[3/4] overflow-hidden rounded-2xl group shadow-lg"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
