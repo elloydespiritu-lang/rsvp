@@ -112,20 +112,28 @@ export default function App() {
       {/* Floating Music Toggle */}
       <button
         onClick={toggleMute}
-        className="group fixed bottom-6 right-6 z-50 flex items-center justify-center overflow-hidden rounded-full border border-gold/30 bg-white/60 p-4 text-gold backdrop-blur-md shadow-lg transition-all duration-500 hover:-translate-y-1 hover:border-gold/60 hover:bg-white/80 hover:shadow-[0_8px_30px_rgba(212,175,55,0.2)]"
+        className="group fixed bottom-6 right-6 z-50 flex items-center gap-2 overflow-hidden rounded-full border border-maroon/30 bg-white/60 px-4 py-3 text-maroon-dark backdrop-blur-md shadow-lg transition-all duration-500 hover:-translate-y-1 hover:border-maroon/60 hover:bg-white/80 hover:shadow-[0_8px_30px_rgba(122,15,28,0.2)]"
         aria-label="Toggle background music"
       >
-        <span className="relative z-10">{isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}</span>
+        <span className="relative z-10 flex items-center gap-2 font-sans text-xs uppercase tracking-widest font-medium">
+          {isMuted ? (
+            <>
+              <VolumeX size={18} />
+              <span>Music Off</span>
+            </>
+          ) : (
+            <>
+              <Volume2 size={18} />
+              <span>Music On</span>
+            </>
+          )}
+        </span>
         <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
       </button>
 
       {/* Audio Element (Hidden) */}
       <audio id="bg-music" loop muted={isMuted}>
-        {/* Using a public domain classical music piece for wedding vibe */}
-        <source
-          src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3?filename=canon-in-d-pachelbel-11478.mp3"
-          type="audio/mpeg"
-        />
+        <source src="/music/perfect-instrumental.mp3" type="audio/mpeg" />
       </audio>
 
       <main className="relative z-10">
