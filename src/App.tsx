@@ -134,13 +134,7 @@ export default function App() {
 
       {/* Audio Element (Hidden) */}
       <audio ref={audioRef} id="bg-music" loop muted={isMuted}>
-        {/* Primary source: local file */}
         <source src="/music/perfect-instrumental.mp3" type="audio/mpeg" />
-        {/* Fallback source: working instrumental URL for testing */}
-        <source 
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" 
-          type="audio/mpeg" 
-        />
       </audio>
 
       <main className="relative z-10">
