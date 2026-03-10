@@ -57,10 +57,11 @@ export default function Hero() {
           
           <a 
             href="#greeting"
-            className="inline-block border border-white/20 bg-white/10 backdrop-blur-md hover:bg-white/20 hover:border-white/40 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-500 px-10 py-4 uppercase tracking-[0.2em] text-sm font-medium rounded-full text-[#F7F4EF]"
+            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-white/20 bg-white/10 px-10 py-4 text-sm font-medium uppercase tracking-[0.2em] text-[#F7F4EF] backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-white/40 hover:bg-white/20 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
             style={{ textShadow: '0 1px 5px rgba(0,0,0,0.3)' }}
           >
-            Open Invitation
+            <span className="relative z-10">Open Invitation</span>
+            <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
           </a>
         </motion.div>
       </div>

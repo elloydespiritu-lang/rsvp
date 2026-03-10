@@ -166,9 +166,12 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
                 <button 
                   type="submit"
                   disabled={isSubmitting || formData.attendance === 'Pending'}
-                  className="bg-maroon text-cream hover:bg-gold hover:text-white transition-all duration-300 px-12 py-4 uppercase tracking-[0.2em] text-sm font-medium rounded-full disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
+                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-maroon/30 bg-maroon/90 px-12 py-4 text-sm font-medium uppercase tracking-[0.2em] text-cream backdrop-blur-md shadow-md transition-all duration-500 hover:-translate-y-1 hover:border-gold/50 hover:bg-maroon hover:text-gold hover:shadow-[0_8px_30px_rgba(107,30,30,0.2)] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:bg-maroon/90 disabled:hover:text-cream disabled:hover:border-maroon/30 disabled:hover:shadow-md"
                 >
-                  {isSubmitting ? 'Sending...' : 'Send RSVP'}
+                  <span className="relative z-10">{isSubmitting ? 'Sending...' : 'Send RSVP'}</span>
+                  {!isSubmitting && formData.attendance !== 'Pending' && (
+                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
+                  )}
                 </button>
               </div>
             </form>

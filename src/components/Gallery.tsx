@@ -2,9 +2,9 @@ import { motion } from 'motion/react';
 
 export default function Gallery() {
   const images = [
-    "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=2070&auto=format&fit=crop",
+    "https://res.cloudinary.com/dyku3hrtp/image/upload/v1773110052/5dd34b56-aa17-4999-ab4c-8d871938fb3e_ojdofx.jpg",
+    "https://res.cloudinary.com/dyku3hrtp/image/upload/v1773110052/387cb228-68b2-41d7-9b75-3bb23a340bfc_ajnzru.jpg",
+    "https://res.cloudinary.com/dyku3hrtp/image/upload/v1773110052/91b4f512-0b19-4567-a220-084161672521_wjceuq.jpg",
     "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=2070&auto=format&fit=crop"
