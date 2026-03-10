@@ -52,30 +52,34 @@ export default function App() {
     }
   };
 
-  const toggleMute = () => {
-    const newMutedState = !isMuted;
-    setIsMuted(newMutedState);
-    
-    if (audioRef.current) {
-      audioRef.current.muted = newMutedState;
-      if (!newMutedState) {
-        audioRef.current.play().catch((e) => console.log("Audio play failed:", e));
-      } else {
-        audioRef.current.pause();
+  useEffect(() => {
+    if (!isOpened) return;
+
+    const playAudio = async () => {
+      if (audioRef.current) {
+        try {
+          audioRef.current.muted = isMuted;
+          if (!isMuted) {
+            await audioRef.current.play();
+          } else {
+            audioRef.current.pause();
+          }
+        } catch (error) {
+          console.error("Audio playback error:", error);
+        }
       }
-    }
+    };
+
+    playAudio();
+  }, [isMuted, isOpened]);
+
+  const toggleMute = () => {
+    setIsMuted((prev) => !prev);
   };
 
   const handleOpenInvitation = () => {
     setIsOpened(true);
     setIsMuted(false);
-    
-    if (audioRef.current) {
-      audioRef.current.muted = false;
-      audioRef.current.play().catch((e) => {
-        console.log("Initial audio play failed, likely due to browser policy:", e);
-      });
-    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -133,7 +137,15 @@ export default function App() {
       </button>
 
       {/* Audio Element (Hidden) */}
-      <audio ref={audioRef} id="bg-music" loop muted={isMuted}>
+      <audio 
+        ref={audioRef} 
+        id="bg-music" 
+        loop 
+        muted={isMuted}
+        preload="auto"
+        playsInline
+        onError={(e) => console.error("Audio element error:", e)}
+      >
         <source src="/music/perfect-instrumental.mp3" type="audio/mpeg" />
       </audio>
 
