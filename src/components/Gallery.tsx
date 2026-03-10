@@ -2,12 +2,13 @@ import { motion } from 'motion/react';
 
 export default function Gallery() {
   const images = [
-    "https://res.cloudinary.com/dyku3hrtp/image/upload/v1773110052/5dd34b56-aa17-4999-ab4c-8d871938fb3e_ojdofx.jpg",
-    "https://res.cloudinary.com/dyku3hrtp/image/upload/v1773110052/387cb228-68b2-41d7-9b75-3bb23a340bfc_ajnzru.jpg",
-    "https://res.cloudinary.com/dyku3hrtp/image/upload/v1773110052/91b4f512-0b19-4567-a220-084161672521_wjceuq.jpg",
-    "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=2070&auto=format&fit=crop"
+    "/images/3a34463b-caf9-40bf-b2d8-c0864ddc9b6b.jfif",
+    "/images/4252c285-d637-4e25-b9ba-dcaa09533c7d.jfif",
+    "/images/501d56ef-05b7-47fb-bddd-79234aef3a6d.jfif",
+    "/images/75a0c101-f747-4d73-861c-588222f74efe.jfif",
+    "/images/7d7ef2b0-d1ef-4585-8c7f-7c271cd3113e.jfif",
+    "/images/eda7de5c-1f7d-4b6e-bc12-629a88bced72.jfif",
+    "/images/fd0322e2-084f-4249-b176-da1593d50bd8.jfif"
   ];
 
   return (

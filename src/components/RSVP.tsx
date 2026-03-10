@@ -20,25 +20,30 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
     setIsSubmitting(true);
 
     try {
-      // Send data to Google Apps Script
-      await fetch('https://script.google.com/macros/s/AKfycbySiuvSIKvwLzywvIuosnw67HOKZjkfEtHJBovS_G4P2pqr0vvnN8mOse1KA8vG2nz0RA/exec', {
+      // Send data to local backend
+      const response = await fetch('/api/rsvp', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Type': 'application/json',
         },
-        body: new URLSearchParams({
-          action: 'submitRSVP',
+        body: JSON.stringify({
           inviteCode: inviteCode || 'UNKNOWN',
           attendance: formData.attendance,
           message: formData.message
         })
       });
       
-      setIsSubmitting(false);
-      setIsSubmitted(true);
+      const data = await response.json();
       
-      if (formData.attendance === 'Attending') {
-        triggerConfetti();
+      if (data && data.success) {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+        
+        if (formData.attendance === 'Attending') {
+          triggerConfetti();
+        }
+      } else {
+        throw new Error(data.error || 'Failed to submit RSVP');
       }
     } catch (error) {
       console.error('Error submitting RSVP:', error);

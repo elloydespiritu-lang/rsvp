@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Music, Volume2, VolumeX } from "lucide-react";
 import Hero from "./components/Hero";
 import Greeting from "./components/Greeting";
+import Timeline from "./components/Timeline";
 import Details from "./components/Details";
 import Countdown from "./components/Countdown";
 import Gallery from "./components/Gallery";
@@ -35,10 +36,8 @@ export default function App() {
   const fetchGuestData = async (code: string) => {
     setIsLoading(true);
     try {
-      // API call to Google Apps Script
-      const response = await fetch(
-        `https://script.google.com/macros/s/AKfycbySiuvSIKvwLzywvIuosnw67HOKZjkfEtHJBovS_G4P2pqr0vvnN8mOse1KA8vG2nz0RA/exec?action=getGuest&inviteCode=${code}`,
-      );
+      // API call to local backend
+      const response = await fetch(`/api/guest?inviteCode=${code}`);
       const data = await response.json();
 
       if (data && data.success) {
@@ -131,6 +130,7 @@ export default function App() {
       <main className="relative z-10">
         <Hero />
         <Greeting guestName={guestName} />
+        <Timeline />
         <Details />
         <Countdown targetDate="2026-05-18T15:00:00" />
         <Gallery />

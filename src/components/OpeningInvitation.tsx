@@ -91,7 +91,7 @@ export default function OpeningInvitation({ onOpen }: OpeningInvitationProps) {
 
           <button
             onClick={handleOpen}
-            className="group relative pointer-events-auto overflow-hidden rounded-full border border-gold/40 bg-white/40 px-10 py-4 text-sm font-medium uppercase tracking-[0.2em] text-maroon-dark backdrop-blur-md shadow-lg transition-all duration-500 hover:-translate-y-1 hover:border-gold/60 hover:bg-white/60 hover:shadow-[0_8px_30px_rgba(212,175,55,0.2)]"
+            className="group relative pointer-events-auto overflow-hidden rounded-full border border-gold/40 bg-white/40 px-10 py-4 text-lg font-serif italic tracking-wide text-maroon-dark backdrop-blur-md shadow-lg transition-all duration-500 hover:-translate-y-1 hover:border-gold/60 hover:bg-white/60 hover:shadow-[0_8px_30px_rgba(212,175,55,0.2)]"
           >
             <span className="relative z-10">Open Invitation</span>
             <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
