@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Music, Volume2, VolumeX } from "lucide-react";
 import Hero from "./components/Hero";
@@ -16,6 +16,7 @@ export default function App() {
   const [isMuted, setIsMuted] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
   const [isOpened, setIsOpened] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     // Parse URL parameters
@@ -24,8 +25,6 @@ export default function App() {
 
     if (code) {
       setInviteCode(code);
-      // In a real app, this would fetch from the Google Apps Script API
-      // For the preview, we'll simulate an API call
       fetchGuestData(code);
     } else {
       setIsLoading(false);
@@ -35,7 +34,6 @@ export default function App() {
   const fetchGuestData = async (code: string) => {
     setIsLoading(true);
     try {
-      // API call to Google Apps Script
       const response = await fetch(
         `https://script.google.com/macros/s/AKfycbySiuvSIKvwLzywvIuosnw67HOKZjkfEtHJBovS_G4P2pqr0vvnN8mOse1KA8vG2nz0RA/exec?action=getGuest&inviteCode=${code}`,
       );
@@ -55,25 +53,28 @@ export default function App() {
   };
 
   const toggleMute = () => {
-    setIsMuted(!isMuted);
-    const audio = document.getElementById("bg-music") as HTMLAudioElement;
-    if (audio) {
-      if (isMuted) {
-        audio.play().catch((e) => console.log("Audio play failed:", e));
+    const newMutedState = !isMuted;
+    setIsMuted(newMutedState);
+    
+    if (audioRef.current) {
+      audioRef.current.muted = newMutedState;
+      if (!newMutedState) {
+        audioRef.current.play().catch((e) => console.log("Audio play failed:", e));
       } else {
-        audio.pause();
+        audioRef.current.pause();
       }
     }
   };
 
   const handleOpenInvitation = () => {
     setIsOpened(true);
-    // Unmute audio when they open the invitation
     setIsMuted(false);
-    const audio = document.getElementById("bg-music") as HTMLAudioElement;
-    if (audio) {
-      audio.muted = false;
-      audio.play().catch((e) => console.log("Audio play failed:", e));
+    
+    if (audioRef.current) {
+      audioRef.current.muted = false;
+      audioRef.current.play().catch((e) => {
+        console.log("Initial audio play failed, likely due to browser policy:", e);
+      });
     }
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -132,8 +133,14 @@ export default function App() {
       </button>
 
       {/* Audio Element (Hidden) */}
-      <audio id="bg-music" loop muted={isMuted}>
+      <audio ref={audioRef} id="bg-music" loop muted={isMuted}>
+        {/* Primary source: local file */}
         <source src="/music/perfect-instrumental.mp3" type="audio/mpeg" />
+        {/* Fallback source: working instrumental URL for testing */}
+        <source 
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" 
+          type="audio/mpeg" 
+        />
       </audio>
 
       <main className="relative z-10">
