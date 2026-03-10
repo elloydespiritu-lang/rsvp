@@ -7,7 +7,9 @@ export default function Hero() {
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url("/assets/hero.png")'
+          backgroundImage: 'url("https://res.cloudinary.com/dyku3hrtp/image/upload/f_auto,q_auto/hero_jwy9fm.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
         }}
       >
         {/* Cinematic Overlay */}
