@@ -6,7 +6,7 @@ interface GreetingProps {
 
 export default function Greeting({ guestName }: GreetingProps) {
   return (
-    <section id="greeting" className="py-24 md:py-32 px-6 bg-cream text-center relative">
+    <section id="greeting" className="py-24 md:py-32 px-6 bg-rose-nude text-center relative">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -14,8 +14,8 @@ export default function Greeting({ guestName }: GreetingProps) {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-maroon mb-10 font-medium leading-tight">
-            Dear <span className="text-gold italic">{guestName || 'Friend'}</span>,
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-maroon-dark mb-10 font-medium leading-tight">
+            Dear <span className="text-maroon italic">{guestName || 'Friend'}</span>,
           </h2>
           
           <div className="space-y-6 text-lg md:text-xl font-sans font-light leading-relaxed text-ink-light">

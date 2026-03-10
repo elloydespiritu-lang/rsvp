@@ -9,38 +9,40 @@ export default function Gallery() {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-cream text-ink">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-24 md:py-32 bg-rose-nude/30 text-ink">
+      <div className="max-w-6xl mx-auto px-6">
         <motion.div 
-          className="text-center mb-20"
+          className="text-center mb-16 md:mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className="font-serif text-5xl md:text-6xl mb-4 text-maroon">Moments</h2>
-          <div className="w-24 h-[1px] bg-gold mx-auto"></div>
+          <h2 className="font-serif text-5xl md:text-6xl mb-4 text-maroon-dark">Moments</h2>
+          <div className="w-24 h-[1px] bg-maroon mx-auto"></div>
         </motion.div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {images.map((src, index) => (
-            <motion.div 
-              key={index}
-              className="relative aspect-[3/4] overflow-hidden rounded-2xl group shadow-lg"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-            >
-              <img 
-                src={src} 
-                alt={`Gallery image ${index + 1}`} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                referrerPolicy="no-referrer"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </motion.div>
-          ))}
+ 
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12 max-w-4xl w-full">
+            {images.map((src, index) => (
+              <motion.div 
+                key={index}
+                className="relative aspect-[4/5] overflow-hidden rounded-3xl group shadow-xl border-4 border-white"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+              >
+                <img 
+                  src={src} 
+                  alt={`Gallery image ${index + 1}`} 
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-maroon-dark/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

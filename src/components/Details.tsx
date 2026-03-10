@@ -11,34 +11,34 @@ export default function Details() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className="font-serif text-5xl md:text-6xl mb-4 text-maroon">The Details</h2>
-          <div className="w-24 h-[1px] bg-gold mx-auto"></div>
+          <h2 className="font-serif text-5xl md:text-6xl mb-4 text-maroon-dark">The Details</h2>
+          <div className="w-24 h-[1px] bg-maroon mx-auto"></div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
           {/* Ceremony */}
           <motion.div 
-            className="flex flex-col items-center text-center p-8 md:p-10 border border-gold/20 rounded-3xl bg-cream/50 shadow-md hover:shadow-xl transition-shadow duration-500"
+            className="flex flex-col items-center text-center p-8 md:p-10 border border-maroon/20 rounded-3xl bg-rose-nude/50 shadow-md hover:shadow-xl transition-shadow duration-500"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2 }}
           >
-            <h3 className="font-serif text-3xl md:text-4xl text-maroon mb-6 italic">Ceremony</h3>
+            <h3 className="font-serif text-3xl md:text-4xl text-maroon-dark mb-6 italic">Ceremony</h3>
             
             <div className="space-y-6 font-sans text-ink-light flex-grow flex flex-col items-center w-full">
               <div className="flex flex-col items-center gap-2">
-                <Calendar className="text-gold" size={20} />
+                <Calendar className="text-maroon" size={20} />
                 <p className="tracking-widest uppercase text-xs font-semibold">Monday, May 18, 2026</p>
               </div>
               
               <div className="flex flex-col items-center gap-2">
-                <Clock className="text-gold" size={20} />
+                <Clock className="text-maroon" size={20} />
                 <p className="tracking-widest uppercase text-xs font-semibold">2:30 PM</p>
               </div>
               
               <div className="flex flex-col items-center gap-2">
-                <MapPin className="text-gold" size={20} />
+                <MapPin className="text-maroon" size={20} />
                 <p className="font-serif text-xl text-ink font-medium leading-tight">Iglesia Ni Cristo [Marikina] - Marikina Centro</p>
                 <p className="text-sm leading-relaxed max-w-[280px]">
                   INC Compound, Guerilla<br/>
@@ -47,7 +47,7 @@ export default function Details() {
               </div>
 
               {/* Map Preview */}
-              <div className="w-full h-48 rounded-xl overflow-hidden border border-gold/10 shadow-inner mt-4">
+              <div className="w-full h-48 rounded-xl overflow-hidden border border-maroon/10 shadow-inner mt-4">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.4287!2d121.102247!3d14.6368738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b90017a20395%3A0x338a583d326a75c9!2sIGLESIA%20NI%20CRISTO%20%5BMARIKINA%5D%20-%20Marikina%20Centro!5e0!3m2!1sen!2sph!4v1710000000000!5m2!1sen!2sph"
                   width="100%" 
@@ -75,22 +75,22 @@ export default function Details() {
 
           {/* Reception */}
           <motion.div 
-            className="flex flex-col items-center text-center p-8 md:p-10 border border-gold/20 rounded-3xl bg-cream/50 shadow-md hover:shadow-xl transition-shadow duration-500"
+            className="flex flex-col items-center text-center p-8 md:p-10 border border-maroon/20 rounded-3xl bg-rose-nude/50 shadow-md hover:shadow-xl transition-shadow duration-500"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.4 }}
           >
-            <h3 className="font-serif text-3xl md:text-4xl text-maroon mb-6 italic">Reception</h3>
+            <h3 className="font-serif text-3xl md:text-4xl text-maroon-dark mb-6 italic">Reception</h3>
             
             <div className="space-y-6 font-sans text-ink-light flex-grow flex flex-col items-center w-full">
               <div className="flex flex-col items-center gap-2">
-                <Clock className="text-gold" size={20} />
+                <Clock className="text-maroon" size={20} />
                 <p className="tracking-widest uppercase text-xs font-semibold">4:30 PM</p>
               </div>
               
               <div className="flex flex-col items-center gap-2">
-                <MapPin className="text-gold" size={20} />
+                <MapPin className="text-maroon" size={20} />
                 <p className="font-serif text-xl text-ink font-medium leading-tight">Rancho Estate IV West Clubhouse</p>
                 <p className="text-sm leading-relaxed max-w-[280px]">
                   Jersey St., Marikina Heights<br/>
@@ -99,7 +99,7 @@ export default function Details() {
               </div>
 
               {/* Map Preview */}
-              <div className="w-full h-48 rounded-xl overflow-hidden border border-gold/10 shadow-inner mt-4">
+              <div className="w-full h-48 rounded-xl overflow-hidden border border-maroon/10 shadow-inner mt-4">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.1650!2d121.1189272!3d14.644296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b974ed01edaf%3A0x7e5ef1ad2499f5f3!2sRancho%20Estate%20IV%20West%20Clubhouse!5e0!3m2!1sen!2sph!4v1710000000000!5m2!1sen!2sph"
                   width="100%" 

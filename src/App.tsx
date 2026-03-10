@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "motion/react";
 import { Music, Volume2, VolumeX } from "lucide-react";
 import Hero from "./components/Hero";
 import Greeting from "./components/Greeting";
-import Timeline from "./components/Timeline";
 import Details from "./components/Details";
 import Countdown from "./components/Countdown";
 import Gallery from "./components/Gallery";
@@ -36,8 +35,10 @@ export default function App() {
   const fetchGuestData = async (code: string) => {
     setIsLoading(true);
     try {
-      // API call to local backend
-      const response = await fetch(`/api/guest?inviteCode=${code}`);
+      // API call to Google Apps Script
+      const response = await fetch(
+        `https://script.google.com/macros/s/AKfycbySiuvSIKvwLzywvIuosnw67HOKZjkfEtHJBovS_G4P2pqr0vvnN8mOse1KA8vG2nz0RA/exec?action=getGuest&inviteCode=${code}`,
+      );
       const data = await response.json();
 
       if (data && data.success) {
@@ -83,7 +84,7 @@ export default function App() {
         <motion.div
           animate={{ scale: [1, 1.1, 1] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="text-maroon font-serif text-3xl italic"
+          className="text-maroon-dark font-serif text-3xl italic"
         >
           Loading...
         </motion.div>
@@ -93,7 +94,7 @@ export default function App() {
 
   return (
     <div
-      className={`min-h-screen bg-cream text-ink relative ${!isOpened ? "h-screen overflow-hidden" : "overflow-hidden"}`}
+      className={`min-h-screen bg-rose-nude text-ink relative ${!isOpened ? "h-screen overflow-hidden" : "overflow-hidden"}`}
     >
       <AnimatePresence>
         {!isOpened && <OpeningInvitation onOpen={handleOpenInvitation} />}
@@ -130,7 +131,6 @@ export default function App() {
       <main className="relative z-10">
         <Hero />
         <Greeting guestName={guestName} />
-        <Timeline />
         <Details />
         <Countdown targetDate="2026-05-18T15:00:00" />
         <Gallery />
@@ -139,7 +139,7 @@ export default function App() {
       </main>
 
       <footer className="py-12 text-center bg-maroon-dark text-cream/60 text-sm font-sans">
-        <p className="font-serif italic text-lg mb-2 text-gold">
+        <p className="font-serif italic text-lg mb-2 text-blush">
           Thank you for being part of our story.
         </p>
         <p>

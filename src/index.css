@@ -14,9 +14,16 @@
   --color-cream: #F2F0EE;
   --color-ink: #2C2A29;
   --color-ink-light: #4A4745;
-  --color-maroon: #6B1E1E;
-  --color-maroon-light: #8B2E2E;
-  --color-maroon-dark: #4A0404;
+  
+  /* New Wedding Palette */
+  --color-maroon-dark: #7A0F1C;
+  --color-maroon: #8F3A3A;
+  --color-red: #B11B1B;
+  --color-blush: #E8A1A8;
+  --color-rose-nude: #EAD4D6;
+  
+  /* Legacy mapping for compatibility */
+  --color-maroon-light: #B11B1B;
   --color-gold: #D4AF37;
 }
 

@@ -51,7 +51,7 @@ export default function Countdown({ targetDate }: CountdownProps) {
   ];
 
   return (
-    <section className="py-24 bg-deep-maroon text-cream relative overflow-hidden">
+    <section className="py-24 bg-maroon-dark text-rose-nude relative overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-20"
@@ -64,7 +64,7 @@ export default function Countdown({ targetDate }: CountdownProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className="font-serif text-4xl md:text-5xl mb-12 italic text-gold">Counting down the days</h2>
+          <h2 className="font-serif text-4xl md:text-5xl mb-12 italic text-blush">Counting down the days</h2>
           
           <div className="flex flex-wrap justify-center gap-6 md:gap-12">
             {timeUnits.map((unit, index) => (
@@ -76,12 +76,12 @@ export default function Countdown({ targetDate }: CountdownProps) {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
               >
-                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border border-gold/30 flex items-center justify-center bg-white/5 backdrop-blur-sm mb-4 shadow-lg">
+                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border border-blush/30 flex items-center justify-center bg-white/5 backdrop-blur-sm mb-4 shadow-lg">
                   <span className="font-serif text-4xl md:text-5xl text-white">
                     {String(unit.value).padStart(2, '0')}
                   </span>
                 </div>
-                <span className="font-sans text-xs md:text-sm uppercase tracking-[0.2em] text-gold-light">
+                <span className="font-sans text-xs md:text-sm uppercase tracking-[0.2em] text-blush">
                   {unit.label}
                 </span>
               </motion.div>
