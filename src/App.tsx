@@ -152,7 +152,7 @@ export default function App() {
         playsInline
         onError={(e) => console.error("Audio element error:", e)}
       >
-        <source src="/music/uify.mp3" type="audio/mpeg" />
+        <source src="https://res.cloudinary.com/dyku3hrtp/video/upload/v1773386615/uify_pgpmzc.mp3" type="audio/mpeg" />
       </audio>
 
       <main className="relative z-10">
