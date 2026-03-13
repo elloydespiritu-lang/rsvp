@@ -125,6 +125,72 @@ export default function Details() {
             </div>
           </motion.div>
         </div>
+
+        {/* Additional Information */}
+        <div className="mt-32 space-y-24 max-w-3xl mx-auto">
+          {/* Divider */}
+          <motion.div 
+            className="flex justify-center items-center gap-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <div className="h-[1px] w-12 bg-maroon/20"></div>
+            <div className="w-2 h-2 rounded-full bg-maroon/40"></div>
+            <div className="h-[1px] w-12 bg-maroon/20"></div>
+          </motion.div>
+
+          {/* Gift Guide */}
+          <motion.div 
+            className="text-center px-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="font-serif text-3xl md:text-4xl text-maroon-dark mb-6 italic">Gift Guide</h3>
+            <p className="font-sans text-ink-light leading-relaxed text-lg">
+              Our lives are graced with blessings bright, your presence and prayers our true delight. 
+              Yet, should you wish to gift us more, a monetary offering we would adore.
+            </p>
+          </motion.div>
+
+          {/* Plus One */}
+          <motion.div 
+            className="text-center px-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <h3 className="font-serif text-3xl md:text-4xl text-maroon-dark mb-6 italic">Can I Bring Someone With Me?</h3>
+            <div className="space-y-4">
+              <p className="font-sans text-ink-light leading-relaxed text-lg">
+                Even though we would love to have more guests, our wedding is absolutely RSVP only. 
+                We only invited those we love the most because we want it to be intimate, and that includes you!
+              </p>
+              <p className="font-sans text-maroon font-bold tracking-[0.2em] uppercase text-sm pt-2">
+                Strictly no plus one.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Kids */}
+          <motion.div 
+            className="text-center px-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <h3 className="font-serif text-3xl md:text-4xl text-maroon-dark mb-6 italic">Can We Bring Our Kids to the Wedding?</h3>
+            <p className="font-sans text-ink-light leading-relaxed text-lg">
+              Although we love your little ones, we can only accommodate the children of immediate family. 
+              In order to allow all guests, including parents, a day of relaxation, we have chosen for our 
+              wedding day to be an adults-only occasion.
+            </p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
