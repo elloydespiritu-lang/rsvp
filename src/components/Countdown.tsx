@@ -54,13 +54,12 @@ export default function Countdown({ targetDate }: CountdownProps) {
     <section className="relative min-h-[500px] flex items-center py-24 bg-maroon-dark text-rose-nude overflow-hidden">
       {/* Responsive Background Image Container */}
       <div className="absolute inset-0 z-0">
-        <div 
-          className="w-full h-full bg-cover bg-center bg-no-repeat transition-all duration-500"
-          style={{ 
-            backgroundImage: 'url("https://res.cloudinary.com/dyku3hrtp/image/upload/v1773199192/ad10178d-2e5e-4fb4-a487-3dba8f624b20_jec72y.jpg")',
-            backgroundAttachment: 'scroll' // Better for mobile performance than fixed
-          }}
-        ></div>
+        <img 
+          src="https://res.cloudinary.com/dyku3hrtp/image/upload/v1773199192/ad10178d-2e5e-4fb4-a487-3dba8f624b20_jec72y.jpg"
+          alt="Countdown Background"
+          className="w-full h-full object-cover object-[center_80%] transition-all duration-500"
+          referrerPolicy="no-referrer"
+        />
         {/* Maroon Overlay */}
         <div className="absolute inset-0 bg-maroon-dark/80 mix-blend-multiply"></div>
       </div>
