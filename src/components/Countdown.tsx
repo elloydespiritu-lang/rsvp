@@ -51,22 +51,31 @@ export default function Countdown({ targetDate }: CountdownProps) {
   ];
 
   return (
-    <section className="py-24 bg-maroon-dark text-rose-nude relative overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-20"
-        style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop")' }}
-      ></div>
+    <section className="relative min-h-[500px] flex items-center py-24 bg-maroon-dark text-rose-nude overflow-hidden">
+      {/* Responsive Background Image Container */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="w-full h-full bg-cover bg-center bg-no-repeat transition-all duration-500"
+          style={{ 
+            backgroundImage: 'url("https://res.cloudinary.com/dyku3hrtp/image/upload/v1773199192/ad10178d-2e5e-4fb4-a487-3dba8f624b20_jec72y.jpg")',
+            backgroundAttachment: 'scroll' // Better for mobile performance than fixed
+          }}
+        ></div>
+        {/* Maroon Overlay */}
+        <div className="absolute inset-0 bg-maroon-dark/80 mix-blend-multiply"></div>
+      </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className="font-serif text-4xl md:text-5xl mb-12 italic text-blush">Counting down the days</h2>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-12 italic text-blush drop-shadow-sm">
+            Counting down the days
+          </h2>
           
-          <div className="flex flex-wrap justify-center gap-6 md:gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-3xl mx-auto">
             {timeUnits.map((unit, index) => (
               <motion.div 
                 key={unit.label}
@@ -76,12 +85,17 @@ export default function Countdown({ targetDate }: CountdownProps) {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
               >
-                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border border-blush/30 flex items-center justify-center bg-white/5 backdrop-blur-sm mb-4 shadow-lg">
-                  <span className="font-serif text-4xl md:text-5xl text-white">
-                    {String(unit.value).padStart(2, '0')}
-                  </span>
+                <div className="relative group">
+                  {/* Decorative outer ring */}
+                  <div className="absolute -inset-2 rounded-full border border-blush/20 scale-110 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+                  
+                  <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full border border-blush/30 flex flex-col items-center justify-center bg-white/5 backdrop-blur-md mb-4 shadow-2xl relative z-10">
+                    <span className="font-serif text-4xl sm:text-5xl md:text-6xl text-white leading-none">
+                      {String(unit.value).padStart(2, '0')}
+                    </span>
+                  </div>
                 </div>
-                <span className="font-sans text-xs md:text-sm uppercase tracking-[0.2em] text-blush">
+                <span className="font-sans text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.3em] text-blush font-medium">
                   {unit.label}
                 </span>
               </motion.div>

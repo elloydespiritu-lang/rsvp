@@ -53,6 +53,12 @@ export default function App() {
   };
 
   useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = 0.3; // Play softly
+    }
+  }, []);
+
+  useEffect(() => {
     if (!isOpened) return;
 
     const playAudio = async () => {
@@ -146,7 +152,7 @@ export default function App() {
         playsInline
         onError={(e) => console.error("Audio element error:", e)}
       >
-        <source src="/music/perfect-instrumental.mp3" type="audio/mpeg" />
+        <source src="/music/uify.mp3" type="audio/mpeg" />
       </audio>
 
       <main className="relative z-10">
