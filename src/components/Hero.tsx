@@ -37,7 +37,7 @@ export default function Hero() {
           transition={{ duration: 1.5, delay: 0.5 }}
           style={{ textShadow: '0 2px 10px rgba(0,0,0,0.35)' }}
         >
-          <span className="text-rose-nude">LLoyd</span>
+          <span className="text-rose-nude">Lloyd</span>
           <span className="italic font-light text-5xl md:text-7xl text-blush">&amp;</span>
           <span className="text-rose-nude">Nicole</span>
         </motion.h1>
