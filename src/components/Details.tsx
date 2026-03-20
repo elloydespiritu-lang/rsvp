@@ -3,8 +3,8 @@ import { MapPin, Clock, Calendar, Heart, Gift, Users } from 'lucide-react';
 
 export default function Details() {
   return (
-    <section className="py-24 md:py-32 bg-[#F7F4EF] text-ink relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+    <section className="px-6 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative z-10">
         <motion.div 
           className="text-center mb-24"
           initial={{ opacity: 0, y: 30 }}
@@ -23,7 +23,7 @@ export default function Details() {
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 mb-32">
           {/* Ceremony */}
           <motion.div 
-            className="flex flex-col items-center text-center p-10 md:p-14 border border-maroon/10 rounded-[2rem] bg-white shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_60px_rgba(107,30,30,0.08)] transition-all duration-700 relative overflow-hidden group"
+            className="invitation-card flex flex-col items-center text-center group"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -33,15 +33,15 @@ export default function Details() {
             
             <h3 className="font-serif text-4xl md:text-5xl text-maroon-dark mb-10 italic tracking-wide">Ceremony</h3>
             
-            <div className="space-y-8 font-sans text-ink-light flex-grow flex flex-col items-center w-full">
+            <div className="space-y-8 font-sans text-ink-soft flex-grow flex flex-col items-center w-full">
               <div className="flex flex-col items-center gap-3">
                 <Calendar className="text-maroon/70" size={24} strokeWidth={1.5} />
-                <p className="tracking-[0.3em] uppercase text-[11px] font-medium text-ink">Monday, May 18, 2026</p>
+                <p className="tracking-[0.3em] uppercase text-[11px] font-medium text-maroon">Monday, May 18, 2026</p>
               </div>
               
               <div className="flex flex-col items-center gap-3">
                 <Clock className="text-maroon/70" size={24} strokeWidth={1.5} />
-                <p className="tracking-[0.3em] uppercase text-[11px] font-medium text-ink">2:30 PM</p>
+                <p className="tracking-[0.3em] uppercase text-[11px] font-medium text-maroon">2:30 PM</p>
               </div>
               
               <div className="flex flex-col items-center gap-4">
@@ -84,7 +84,7 @@ export default function Details() {
 
           {/* Reception */}
           <motion.div 
-            className="flex flex-col items-center text-center p-10 md:p-14 border border-maroon/10 rounded-[2rem] bg-white shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_60px_rgba(107,30,30,0.08)] transition-all duration-700 relative overflow-hidden group"
+            className="invitation-card flex flex-col items-center text-center group"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -94,10 +94,10 @@ export default function Details() {
             
             <h3 className="font-serif text-4xl md:text-5xl text-maroon-dark mb-10 italic tracking-wide">Reception</h3>
             
-            <div className="space-y-8 font-sans text-ink-light flex-grow flex flex-col items-center w-full">
+            <div className="space-y-8 font-sans text-ink-soft flex-grow flex flex-col items-center w-full">
               <div className="flex flex-col items-center gap-3">
                 <Clock className="text-maroon/70" size={24} strokeWidth={1.5} />
-                <p className="tracking-[0.3em] uppercase text-[11px] font-medium text-ink">4:30 PM</p>
+                <p className="tracking-[0.3em] uppercase text-[11px] font-medium text-maroon">4:30 PM</p>
               </div>
               
               <div className="flex flex-col items-center gap-4">
@@ -139,6 +139,80 @@ export default function Details() {
           </motion.div>
         </div>
 
+        {/* Additional Information */}
+        <div className="max-w-5xl mx-auto">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <h2 className="font-serif text-4xl md:text-5xl mb-6 text-maroon-dark tracking-wide">Notes</h2>
+            <div className="flex justify-center items-center gap-4">
+              <div className="w-12 h-[1px] bg-maroon/20"></div>
+              <div className="w-1.5 h-1.5 rounded-full bg-maroon/40"></div>
+              <div className="w-12 h-[1px] bg-maroon/20"></div>
+            </div>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Gift Guide */}
+            <motion.div 
+              className="invitation-card text-center p-8 md:p-10 flex flex-col items-center group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="w-14 h-14 rounded-full bg-maroon/5 flex items-center justify-center mb-6 text-maroon group-hover:scale-110 transition-transform duration-500 ease-out">
+                <Gift size={22} strokeWidth={1.5} />
+              </div>
+              <h3 className="font-serif text-2xl text-maroon-dark mb-4 italic tracking-wide">Gift Guide</h3>
+              <p className="font-sans text-ink-soft leading-relaxed text-sm font-light tracking-wide">
+                Our lives are graced with blessings bright, your presence and prayers our true delight. 
+                Yet, should you wish to gift us more, a monetary offering we would adore.
+              </p>
+            </motion.div>
+
+            {/* Plus One */}
+            <motion.div 
+              className="invitation-card text-center p-8 md:p-10 flex flex-col items-center group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.15 }}
+            >
+              <div className="w-14 h-14 rounded-full bg-maroon/5 flex items-center justify-center mb-6 text-maroon group-hover:scale-110 transition-transform duration-500 ease-out">
+                <Users size={22} strokeWidth={1.5} />
+              </div>
+              <h3 className="font-serif text-2xl text-maroon-dark mb-4 italic tracking-wide">Plus Ones</h3>
+              <p className="font-sans text-ink-soft leading-relaxed text-sm font-light mb-6 tracking-wide">
+                Our wedding is absolutely RSVP only. We only invited those we love the most to keep it intimate.
+              </p>
+              <p className="font-sans text-maroon font-medium tracking-[0.2em] uppercase text-[10px] mt-auto">
+                Strictly no plus one
+              </p>
+            </motion.div>
+
+            {/* Kids */}
+            <motion.div 
+              className="invitation-card text-center p-8 md:p-10 flex flex-col items-center group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <div className="w-14 h-14 rounded-full bg-maroon/5 flex items-center justify-center mb-6 text-maroon group-hover:scale-110 transition-transform duration-500 ease-out">
+                <Heart size={22} strokeWidth={1.5} />
+              </div>
+              <h3 className="font-serif text-2xl text-maroon-dark mb-4 italic tracking-wide">Children</h3>
+              <p className="font-sans text-ink-soft leading-relaxed text-sm font-light tracking-wide">
+                We can only accommodate children of immediate family. To allow all guests a day of relaxation, we have chosen an adults-only occasion.
+              </p>
+            </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

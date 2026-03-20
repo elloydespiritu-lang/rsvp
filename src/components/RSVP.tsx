@@ -76,10 +76,10 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
   };
 
   return (
-    <section id="rsvp" className="py-24 md:py-32 bg-rose-nude text-ink relative overflow-hidden">
-      <div className="max-w-3xl mx-auto px-6 relative z-10">
+    <section id="rsvp" className="px-6 relative overflow-hidden">
+      <div className="max-w-3xl mx-auto relative z-10">
         <motion.div 
-          className="bg-white p-8 md:p-16 rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.03)] border border-maroon/5 relative overflow-hidden"
+          className="invitation-card relative overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -94,7 +94,7 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6 text-maroon-dark tracking-wide">R.S.V.P.</h2>
             <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-maroon/80 mb-3">Kindly respond by</p>
-            <p className="font-serif italic text-2xl text-ink-light">April 18, 2026</p>
+            <p className="font-serif italic text-2xl text-ink-soft">April 18, 2026</p>
           </div>
 
           {isSubmitted ? (
@@ -105,14 +105,14 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <h3 className="font-serif text-3xl md:text-4xl text-maroon mb-6 italic tracking-wide">Thank you for your response.</h3>
-              <p className="font-sans text-ink-light leading-relaxed font-light tracking-wide">
+              <p className="font-sans text-ink-soft leading-relaxed font-light tracking-wide">
                 We look forward to celebrating with you.
               </p>
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-10 relative z-10">
               <div className="space-y-3">
-                <label className="block font-sans text-[10px] uppercase tracking-[0.3em] text-ink-light/80 text-center">
+                <label className="block font-sans text-[10px] uppercase tracking-[0.3em] text-ink-soft/80 text-center">
                   Guest Name
                 </label>
                 <div className="text-center font-serif text-3xl text-maroon-dark border-b border-maroon/20 pb-4 tracking-wide">
@@ -121,7 +121,7 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
               </div>
 
               <div className="space-y-6">
-                <label className="block font-sans text-[10px] uppercase tracking-[0.3em] text-ink-light/80 text-center mb-6">
+                <label className="block font-sans text-[10px] uppercase tracking-[0.3em] text-ink-soft/80 text-center mb-6">
                   Will you attend?
                 </label>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -140,7 +140,7 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
                         <div className={`w-2.5 h-2.5 rounded-full bg-maroon transition-transform duration-300 ${formData.attendance === 'Attending' ? 'scale-100' : 'scale-0'}`}></div>
                       </div>
                     </div>
-                    <span className="font-serif italic text-xl text-ink-light group-hover:text-maroon transition-colors tracking-wide">Accept with Pleasure</span>
+                    <span className="font-serif italic text-xl text-ink-soft group-hover:text-maroon transition-colors tracking-wide">Accept with Pleasure</span>
                   </label>
                   <label className="flex items-center justify-center gap-4 cursor-pointer group">
                     <div className="relative flex items-center justify-center">
@@ -156,13 +156,13 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
                         <div className={`w-2.5 h-2.5 rounded-full bg-maroon transition-transform duration-300 ${formData.attendance === 'Declined' ? 'scale-100' : 'scale-0'}`}></div>
                       </div>
                     </div>
-                    <span className="font-serif italic text-xl text-ink-light group-hover:text-maroon transition-colors tracking-wide">Regretfully Decline</span>
+                    <span className="font-serif italic text-xl text-ink-soft group-hover:text-maroon transition-colors tracking-wide">Regretfully Decline</span>
                   </label>
                 </div>
               </div>
 
               <div className="space-y-3 pt-4">
-                <label htmlFor="message" className="block font-sans text-[10px] uppercase tracking-[0.3em] text-ink-light/80 text-center">
+                <label htmlFor="message" className="block font-sans text-[10px] uppercase tracking-[0.3em] text-ink-soft/80 text-center">
                   Message for the Couple
                 </label>
                 <textarea 

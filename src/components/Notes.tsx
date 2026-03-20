@@ -51,9 +51,9 @@ export default function Notes() {
               <div className="w-14 h-14 rounded-full bg-rose-nude/30 flex items-center justify-center mb-6 text-maroon group-hover:scale-110 transition-transform duration-500 ease-out">
                 <Users size={22} strokeWidth={1.5} />
               </div>
-              <h3 className="font-serif text-2xl text-maroon-dark mb-4 italic tracking-wide">Plus Ones</h3>
+              <h3 className="font-serif text-2xl text-maroon-dark mb-4 italic tracking-wide leading-tight">Can I Bring Someone With Me?</h3>
               <p className="font-sans text-ink-light leading-relaxed text-sm font-light mb-6 tracking-wide">
-                Our wedding is absolutely RSVP only. We only invited those we love the most to keep it intimate.
+                Even though we would love to have more guests, our wedding is absolutely RSVP only. We only invited those we love the most because we want it to be intimate, and that includes you!
               </p>
               <p className="font-sans text-maroon font-medium tracking-[0.2em] uppercase text-[10px] mt-auto">
                 Strictly no plus one
@@ -71,9 +71,9 @@ export default function Notes() {
               <div className="w-14 h-14 rounded-full bg-rose-nude/30 flex items-center justify-center mb-6 text-maroon group-hover:scale-110 transition-transform duration-500 ease-out">
                 <Heart size={22} strokeWidth={1.5} />
               </div>
-              <h3 className="font-serif text-2xl text-maroon-dark mb-4 italic tracking-wide">Children</h3>
+              <h3 className="font-serif text-2xl text-maroon-dark mb-4 italic tracking-wide leading-tight">Can We Bring Our Kids to the Wedding?</h3>
               <p className="font-sans text-ink-light leading-relaxed text-sm font-light tracking-wide">
-                We can only accommodate children of immediate family. To allow all guests a day of relaxation, we have chosen an adults-only occasion.
+                Although we love your little ones, we can only accommodate the children of immediate family. In order to allow all guests, including parents, a day of relaxation, we have chosen for our wedding day to be an adults-only occasion.
               </p>
             </motion.div>
           </div>

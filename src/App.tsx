@@ -7,6 +7,7 @@ import Details from "./components/Details";
 import Countdown from "./components/Countdown";
 import Gallery from "./components/Gallery";
 import RSVP from "./components/RSVP";
+import Notes from "./components/Notes";
 import DressCode from "./components/Extras";
 import OpeningInvitation from "./components/OpeningInvitation";
 
@@ -160,6 +161,7 @@ export default function App() {
         <Greeting guestName={guestName} />
         <Details />
         <DressCode />
+        <Notes />
         <Countdown targetDate="2026-05-18T15:00:00" />
         <Gallery />
         <RSVP inviteCode={inviteCode} guestName={guestName} />
