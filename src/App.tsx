@@ -56,36 +56,59 @@ export default function App() {
     if (audioRef.current) {
       audioRef.current.volume = 0.3; // Play softly
     }
-  }, []);
 
-  useEffect(() => {
-    if (!isOpened) return;
-
-    const playAudio = async () => {
-      if (audioRef.current) {
-        try {
-          audioRef.current.muted = isMuted;
-          if (!isMuted) {
-            await audioRef.current.play();
-          } else {
-            audioRef.current.pause();
-          }
-        } catch (error) {
-          console.error("Audio playback error:", error);
-        }
+    // Fallback for any initial user interaction
+    const startAudioOnInteraction = () => {
+      if (audioRef.current && isMuted && !isOpened) {
+        audioRef.current.muted = false;
+        audioRef.current.play()
+          .then(() => {
+            setIsMuted(false);
+            cleanup();
+          })
+          .catch((err) => console.log("Interaction playback failed:", err));
       }
     };
 
-    playAudio();
+    const cleanup = () => {
+      window.removeEventListener("click", startAudioOnInteraction);
+      window.removeEventListener("touchstart", startAudioOnInteraction);
+    };
+
+    window.addEventListener("click", startAudioOnInteraction);
+    window.addEventListener("touchstart", startAudioOnInteraction);
+
+    return cleanup;
+  }, [isMuted, isOpened]);
+
+  useEffect(() => {
+    if (!isOpened || !audioRef.current) return;
+
+    if (isMuted) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio playback error:", error);
+      });
+    }
   }, [isMuted, isOpened]);
 
   const toggleMute = () => {
     setIsMuted((prev) => !prev);
   };
 
+  const handleStartAudio = () => {
+    setIsMuted(false);
+    if (audioRef.current) {
+      audioRef.current.muted = false;
+      audioRef.current.play().catch((error) => {
+        console.error("Initial playback failed:", error);
+      });
+    }
+  };
+
   const handleOpenInvitation = () => {
     setIsOpened(true);
-    setIsMuted(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -108,7 +131,12 @@ export default function App() {
       className={`min-h-screen bg-rose-nude text-ink relative ${!isOpened ? "h-screen overflow-hidden" : "overflow-hidden"}`}
     >
       <AnimatePresence>
-        {!isOpened && <OpeningInvitation onOpen={handleOpenInvitation} />}
+        {!isOpened && (
+          <OpeningInvitation 
+            onOpen={handleOpenInvitation} 
+            onStartAudio={handleStartAudio} 
+          />
+        )}
       </AnimatePresence>
 
       {/* Background floral pattern (subtle) */}

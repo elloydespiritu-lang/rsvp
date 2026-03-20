@@ -3,13 +3,15 @@ import { motion } from "motion/react";
 
 interface OpeningInvitationProps {
   onOpen: () => void;
+  onStartAudio: () => void;
 }
 
-export default function OpeningInvitation({ onOpen }: OpeningInvitationProps) {
+export default function OpeningInvitation({ onOpen, onStartAudio }: OpeningInvitationProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => {
     setIsOpen(true);
+    onStartAudio(); // Trigger audio immediately on user interaction
     setTimeout(() => {
       onOpen();
     }, 2500); // Wait for the full animation sequence
