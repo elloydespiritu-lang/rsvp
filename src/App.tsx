@@ -123,7 +123,7 @@ export default function App() {
       {/* Floating Music Toggle */}
       <button
         onClick={toggleMute}
-        className="group fixed bottom-6 right-6 z-50 flex items-center gap-2 overflow-hidden rounded-full border border-maroon/30 bg-white/60 px-4 py-3 text-maroon-dark backdrop-blur-md shadow-lg transition-all duration-500 hover:-translate-y-1 hover:border-maroon/60 hover:bg-white/80 hover:shadow-[0_8px_30px_rgba(122,15,28,0.2)]"
+        className="group fixed bottom-6 right-6 z-50 flex items-center gap-2 overflow-hidden rounded-full border border-maroon/30 bg-white/60 px-4 py-3 text-maroon-dark backdrop-blur-md shadow-lg transition-all duration-500 hover:-translate-y-1 hover:border-maroon/60 hover:bg-white/80 hover:shadow-[0_8px_30px_rgba(122,15,28,0.2)] focus-visible:ring-2 focus-visible:ring-maroon focus-visible:outline-none"
         aria-label="Toggle background music"
       >
         <span className="relative z-10 flex items-center gap-2 font-sans text-xs uppercase tracking-widest font-medium">
@@ -159,9 +159,9 @@ export default function App() {
         <Hero />
         <Greeting guestName={guestName} />
         <Details />
+        <DressCode />
         <Countdown targetDate="2026-05-18T15:00:00" />
         <Gallery />
-        <DressCode />
         <RSVP inviteCode={inviteCode} guestName={guestName} />
       </main>
 

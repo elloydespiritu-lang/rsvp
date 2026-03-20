@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Heart } from 'lucide-react';
 
 export default function Gallery() {
   const images = [
@@ -9,40 +10,46 @@ export default function Gallery() {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-rose-nude/30 text-ink">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-24 md:py-32 bg-white text-ink relative">
+      <div className="max-w-7xl mx-auto px-6">
         <motion.div 
-          className="text-center mb-16 md:mb-20"
+          className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1, ease: "easeOut" }}
         >
-          <h2 className="font-serif text-5xl md:text-6xl mb-4 text-maroon-dark">Moments</h2>
-          <div className="w-24 h-[1px] bg-maroon mx-auto"></div>
+          <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl mb-6 text-maroon-dark tracking-wide">Moments</h2>
+          <div className="flex justify-center items-center gap-4">
+            <div className="w-16 h-[1px] bg-maroon/30"></div>
+            <Heart className="text-maroon/50" size={16} strokeWidth={1.5} />
+            <div className="w-16 h-[1px] bg-maroon/30"></div>
+          </div>
         </motion.div>
  
-        <div className="flex justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12 max-w-4xl w-full">
-            {images.map((src, index) => (
-              <motion.div 
-                key={index}
-                className="relative aspect-[4/5] overflow-hidden rounded-3xl group shadow-xl border-4 border-white"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-              >
-                <img 
-                  src={src} 
-                  alt={`Gallery image ${index + 1}`} 
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                  referrerPolicy="no-referrer"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-maroon-dark/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </motion.div>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
+          {images.map((src, index) => (
+            <motion.div 
+              key={index}
+              className={`relative overflow-hidden rounded-[2rem] group shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgba(107,30,30,0.1)] transition-all duration-700 ${
+                index % 2 === 0 ? 'md:mt-12' : 'md:-mt-12'
+              } aspect-[4/5]`}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ delay: index * 0.15, duration: 1, ease: "easeOut" }}
+            >
+              <div className="absolute inset-0 bg-maroon/5 group-hover:bg-transparent transition-colors duration-700 z-10 pointer-events-none"></div>
+              <img 
+                src={src} 
+                alt={`Gallery image ${index + 1}`} 
+                className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
+                referrerPolicy="no-referrer"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20 pointer-events-none"></div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
