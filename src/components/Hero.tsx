@@ -27,7 +27,7 @@ export default function Hero() {
             className="font-amoressa text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 md:mb-10 font-light max-w-[280px] sm:max-w-none mx-auto md:mx-0" 
             style={{ color: '#F2F0EE', textShadow: '0 4px 20px rgba(0,0,0,0.4)' }}
           >
-            Together with our families, we invite you to celebrate our love
+            Together with our families, we invite you to celebrate our love.
           </p>
         </motion.div>
 
