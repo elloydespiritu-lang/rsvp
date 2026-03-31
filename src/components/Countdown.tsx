@@ -55,7 +55,7 @@ export default function Countdown({ targetDate }: CountdownProps) {
       {/* Background Image with Cinematic Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://res.cloudinary.com/dyku3hrtp/image/upload/v1773199192/ad10178d-2e5e-4fb4-a487-3dba8f624b20_jec72y.jpg"
+          src="https://res.cloudinary.com/dyku3hrtp/image/upload/v1774236547/c1a10832-eb42-4d2d-a43a-c10d12326e48_vgg5v8.jpg"
           alt="Countdown Background"
           className="w-full h-full object-cover object-[center_75%] transition-all duration-1000"
           referrerPolicy="no-referrer"

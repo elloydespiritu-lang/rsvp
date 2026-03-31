@@ -28,7 +28,7 @@ export default function Greeting({ guestName }: GreetingProps) {
           <div className="mt-16 relative group">
             <div className="absolute inset-0 bg-maroon/5 rounded-[2rem] transform rotate-1 group-hover:rotate-2 transition-transform duration-700 ease-out"></div>
             <img 
-              src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop" 
+              src="https://res.cloudinary.com/dyku3hrtp/image/upload/v1774236547/15698cab-57fc-422b-9923-a650fc49b821_jvf6rv.jpg" 
               alt="Wedding rings" 
               className="w-full h-64 md:h-96 object-cover rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.08)] relative z-10 transform group-hover:-translate-y-1 transition-all duration-700 ease-out"
               referrerPolicy="no-referrer"
