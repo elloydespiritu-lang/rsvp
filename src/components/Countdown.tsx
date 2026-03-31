@@ -51,21 +51,21 @@ export default function Countdown({ targetDate }: CountdownProps) {
   ];
 
   return (
-    <section className="relative min-h-[600px] flex items-center py-24 md:py-32 bg-maroon-dark text-white overflow-hidden">
+    <section className="relative min-h-[600px] flex items-center py-24 md:py-32 bg-zinc-900 text-white overflow-hidden">
       {/* Background Image with Cinematic Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://res.cloudinary.com/dyku3hrtp/image/upload/v1774236547/c1a10832-eb42-4d2d-a43a-c10d12326e48_vgg5v8.jpg"
+          src="https://res.cloudinary.com/dyku3hrtp/image/upload/v1774970335/DSC09349_elhj7d.jpg"
           alt="Countdown Background"
           className="w-full h-full object-cover object-[center_75%] transition-all duration-1000"
           referrerPolicy="no-referrer"
           loading="lazy"
         />
-        {/* Luxury Gradient Overlay */}
+        {/* Luxury Neutral Overlay */}
         <div 
           className="absolute inset-0 z-10"
           style={{
-            background: 'linear-gradient(rgba(122, 15, 28, 0.65), rgba(122, 15, 28, 0.45))'
+            background: 'linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35))'
           }}
         ></div>
         {/* Vignette Effect */}
@@ -84,16 +84,7 @@ export default function Countdown({ targetDate }: CountdownProps) {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 
-            className="font-serif text-5xl md:text-6xl lg:text-7xl mb-20 italic tracking-[0.05em] text-white"
-            style={{
-              textShadow: '0 4px 20px rgba(0,0,0,0.4)'
-            }}
-          >
-            Counting down the days
-          </h2>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 lg:gap-16 max-w-5xl mx-auto place-items-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 lg:gap-10 max-w-4xl mx-auto place-items-center">
             {timeUnits.map((unit, index) => (
               <motion.div 
                 key={unit.label}
@@ -107,19 +98,20 @@ export default function Countdown({ targetDate }: CountdownProps) {
                   ease: [0.21, 0.47, 0.32, 0.98] 
                 }}
               >
-                <div className="relative group mb-8">
+                <div className="relative group mb-4">
                   {/* Glassmorphism Circle */}
                   <div 
-                    className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full flex flex-col items-center justify-center relative z-10 transition-all duration-700 group-hover:scale-105 group-hover:border-white/40"
+                    className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full flex flex-col items-center justify-center relative z-10 transition-all duration-700 group-hover:scale-105 group-hover:border-white/40 backdrop-blur-md"
                     style={{
-                      background: 'rgba(255, 255, 255, 0.08)',
-                      backdropFilter: 'blur(12px)',
-                      WebkitBackdropFilter: 'blur(12px)',
-                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      background: 'rgba(255, 255, 255, 0.15)',
+                      border: '1px solid rgba(255, 255, 255, 0.3)',
                       boxShadow: '0 8px 30px rgba(0, 0, 0, 0.2)'
                     }}
                   >
-                    <span className="font-serif text-5xl sm:text-6xl md:text-7xl text-white leading-none font-medium tracking-tight">
+                    <span 
+                      className="font-serif text-3xl sm:text-4xl md:text-5xl leading-none font-normal tracking-tight"
+                      style={{ color: '#7A0F1C' }}
+                    >
                       {String(unit.value).padStart(2, '0')}
                     </span>
                   </div>
@@ -129,14 +121,24 @@ export default function Countdown({ targetDate }: CountdownProps) {
                 </div>
                 
                 <span 
-                  className="font-sans text-[11px] sm:text-xs md:text-sm uppercase tracking-[0.5em] font-medium"
-                  style={{ color: '#E8E0D5' }}
+                  className="font-sans text-[10px] sm:text-[11px] md:text-xs uppercase tracking-[0.4em] font-medium"
+                  style={{ color: 'rgba(122, 15, 28, 0.8)' }}
                 >
                   {unit.label}
                 </span>
               </motion.div>
             ))}
           </div>
+
+          <h2 
+            className="font-serif text-4xl md:text-5xl lg:text-6xl mt-8 md:mt-12 italic tracking-[0.05em]"
+            style={{
+              color: '#7A0F1C',
+              textShadow: '0 4px 20px rgba(0,0,0,0.2)'
+            }}
+          >
+            Counting down the days
+          </h2>
         </motion.div>
       </div>
     </section>
