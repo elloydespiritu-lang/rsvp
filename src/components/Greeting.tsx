@@ -30,7 +30,7 @@ export default function Greeting({ guestName }: GreetingProps) {
             <img 
               src="https://res.cloudinary.com/dyku3hrtp/image/upload/v1774973511/DSC09371_hlrlrv.jpg" 
               alt="Wedding rings" 
-              className="w-full h-64 md:h-96 object-cover rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.08)] relative z-10 transform group-hover:-translate-y-1 transition-all duration-700 ease-out"
+              className="w-full h-64 md:h-96 object-cover object-[42%_70%] md:object-center rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.08)] relative z-10 transform group-hover:-translate-y-1 transition-all duration-700 ease-out"
               referrerPolicy="no-referrer"
               loading="lazy"
             />

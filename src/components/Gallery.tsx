@@ -43,7 +43,7 @@ export default function Gallery() {
               <img 
                 src={src} 
                 alt={`Gallery image ${index + 1}`} 
-                className="w-full h-full object-cover rounded-[1.5rem] transition-transform duration-[1.5s] ease-out group-hover:scale-105"
+                className="w-full h-full object-cover object-[42%_70%] md:object-center rounded-[1.5rem] transition-transform duration-[1.5s] ease-out group-hover:scale-105"
                 referrerPolicy="no-referrer"
                 loading="lazy"
               />

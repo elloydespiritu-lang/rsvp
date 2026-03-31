@@ -5,11 +5,10 @@ export default function Hero() {
     <section className="relative h-screen flex items-center justify-center md:justify-start overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-[position:42%_70%] md:bg-center"
         style={{
           backgroundImage: 'linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)), url("https://res.cloudinary.com/dyku3hrtp/image/upload/v1774970334/att.AYTmlCBQhvIhHYmb2VItlUvMcqxpVwpJzmhs-oa3Hxk_bc9boa.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundSize: 'cover'
         }}
       >
       </div>
@@ -17,7 +16,7 @@ export default function Hero() {
       {/* Subtle Gradient Overlay for Text Readability (Desktop Only) */}
       <div className="absolute inset-0 z-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent hidden md:block" />
 
-      <div className="relative z-10 text-center md:text-left text-white px-6 md:px-0 md:pl-[8%] lg:pl-[10%] w-full md:max-w-[520px] flex flex-col items-center md:items-start justify-center md:-translate-y-[10%]">
+      <div className="relative z-10 text-center md:text-left text-white px-6 md:px-0 md:pl-[8%] lg:pl-[10%] w-full md:max-w-[520px] flex flex-col items-center md:items-start justify-center -translate-y-[25%] md:-translate-y-[10%]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
