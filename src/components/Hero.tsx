@@ -3,37 +3,23 @@ import { motion } from 'motion/react';
 export default function Hero() {
   return (
     <section 
-      className="relative min-h-screen flex flex-col md:items-center md:justify-start overflow-hidden bg-zinc-900"
+      className="relative min-h-screen flex items-center justify-center md:justify-start overflow-hidden bg-zinc-900 bg-[url('https://res.cloudinary.com/dyku3hrtp/image/upload/c_fill,g_auto:subject,w_600,h_900,q_auto,f_auto/v1774970334/att.AYTmlCBQhvIhHYmb2VItlUvMcqxpVwpJzmhs-oa3Hxk_bc9boa.jpg')] md:bg-[url('https://res.cloudinary.com/dyku3hrtp/image/upload/v1774970334/att.AYTmlCBQhvIhHYmb2VItlUvMcqxpVwpJzmhs-oa3Hxk_bc9boa.jpg')] bg-cover bg-center bg-no-repeat"
     >
-      {/* Mobile Background (Top 55%) */}
-      <div 
-        className="h-[55vh] w-full md:hidden relative bg-cover bg-center"
-        style={{
-          backgroundImage: 'url("https://res.cloudinary.com/dyku3hrtp/image/upload/c_fill,g_face,w_600,h_900,q_auto,f_auto/v1774970334/att.AYTmlCBQhvIhHYmb2VItlUvMcqxpVwpJzmhs-oa3Hxk_bc9boa.jpg")'
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-zinc-900" />
-      </div>
+      {/* Overall Darkening Overlay */}
+      <div className="absolute inset-0 z-0 bg-black/25" />
 
-      {/* Desktop Background (Full Screen) */}
-      <div 
-        className="hidden md:block absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'url("https://res.cloudinary.com/dyku3hrtp/image/upload/v1774970334/att.AYTmlCBQhvIhHYmb2VItlUvMcqxpVwpJzmhs-oa3Hxk_bc9boa.jpg")'
-        }}
-      >
-        <div className="absolute inset-0 z-0 bg-black/25" />
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent" />
-      </div>
+      {/* Subtle Gradient Overlay for Text Readability (Desktop Only) */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent hidden md:block" />
 
-      <div className="relative z-10 text-center md:text-left text-white px-6 md:px-0 md:pl-[8%] lg:pl-[10%] w-full md:max-w-[520px] flex-1 flex flex-col items-center md:items-start justify-center md:-translate-y-[10%]">
+      <div className="relative z-10 text-center md:text-left text-white px-6 md:px-0 md:pl-12 lg:pl-24 w-full md:max-w-[600px] flex flex-col items-center md:items-start justify-center -translate-y-[25%] md:-translate-y-[10%]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
+          className="w-full"
         >
           <p 
-            className="font-amoressa text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 md:mb-10 font-light max-w-[280px] sm:max-w-none mx-auto md:mx-0" 
+            className="font-amoressa text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 md:mb-10 font-light max-w-[280px] sm:max-w-none mx-auto md:mx-0 text-center md:text-left" 
             style={{ color: '#F2F0EE', textShadow: '0 4px 20px rgba(0,0,0,0.4)' }}
           >
             Together with our families, we invite you to celebrate our love.
