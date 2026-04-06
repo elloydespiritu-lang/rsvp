@@ -51,16 +51,11 @@ export default function Countdown({ targetDate }: CountdownProps) {
   ];
 
   return (
-    <section className="relative min-h-[600px] flex items-center py-24 md:py-32 bg-zinc-900 text-white overflow-hidden">
-      {/* Background Image with Cinematic Overlay */}
+    <section 
+      className="relative min-h-screen flex flex-col items-center justify-end py-12 md:py-32 bg-zinc-900 text-white overflow-hidden bg-[url('https://res.cloudinary.com/dyku3hrtp/image/upload/c_fill,g_auto:subject,w_600,h_900,q_auto,f_auto/v1774970335/DSC09349_elhj7d.jpg')] md:bg-[url('https://res.cloudinary.com/dyku3hrtp/image/upload/v1774970335/DSC09349_elhj7d.jpg')] bg-cover bg-top md:bg-center bg-no-repeat md:pb-12"
+    >
+      {/* Cinematic Overlays */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://res.cloudinary.com/dyku3hrtp/image/upload/v1774970335/DSC09349_elhj7d.jpg"
-          alt="Countdown Background"
-          className="w-full h-full object-cover object-[42%_70%] md:object-center transition-all duration-1000"
-          referrerPolicy="no-referrer"
-          loading="lazy"
-        />
         {/* Luxury Neutral Overlay */}
         <div 
           className="absolute inset-0 z-10"
@@ -68,6 +63,10 @@ export default function Countdown({ targetDate }: CountdownProps) {
             background: 'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.25))'
           }}
         ></div>
+        
+        {/* Mobile-Specific Bottom Gradient (Ensures timer readability while keeping faces clear at top) */}
+        <div className="absolute inset-0 z-15 bg-gradient-to-t from-zinc-900 via-zinc-900/60 to-transparent md:hidden" />
+
         {/* Vignette Effect */}
         <div 
           className="absolute inset-0 z-20 pointer-events-none"
@@ -77,7 +76,7 @@ export default function Countdown({ targetDate }: CountdownProps) {
         ></div>
       </div>
 
-      <div className="relative z-30 w-full max-w-6xl mx-auto px-6 text-center">
+      <div className="relative z-30 w-full max-w-6xl mx-auto px-6 text-center pb-6 md:pb-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +100,7 @@ export default function Countdown({ targetDate }: CountdownProps) {
                 <div className="relative group mb-3">
                   {/* Glassmorphism Circle */}
                   <div 
-                    className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full flex flex-col items-center justify-center relative z-10 transition-all duration-700 group-hover:scale-105 group-hover:border-white/40 backdrop-blur-md"
+                    className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full flex flex-col items-center justify-center relative z-10 transition-all duration-700 group-hover:scale-105 group-hover:border-white/40 backdrop-blur-md"
                     style={{
                       background: 'rgba(255, 255, 255, 0.08)',
                       border: '1px solid rgba(255, 255, 255, 0.25)',
@@ -109,8 +108,8 @@ export default function Countdown({ targetDate }: CountdownProps) {
                     }}
                   >
                     <span 
-                      className="font-serif text-2xl sm:text-3xl md:text-4xl leading-none font-normal tracking-tight"
-                      style={{ color: '#8F3A3A', letterSpacing: '0.02em' }}
+                      className="font-serif text-xl sm:text-2xl md:text-4xl leading-none font-normal tracking-tight text-blush"
+                      style={{ letterSpacing: '0.02em' }}
                     >
                       {String(unit.value).padStart(2, '0')}
                     </span>
@@ -121,8 +120,7 @@ export default function Countdown({ targetDate }: CountdownProps) {
                 </div>
                 
                 <span 
-                  className="font-sans text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.5em] font-medium"
-                  style={{ color: 'rgba(122, 15, 28, 0.6)' }}
+                  className="font-sans text-[8px] sm:text-[9px] md:text-[11px] uppercase tracking-[0.5em] font-medium text-blush/80"
                 >
                   {unit.label}
                 </span>
@@ -131,9 +129,8 @@ export default function Countdown({ targetDate }: CountdownProps) {
           </div>
 
           <h2 
-            className="font-serif text-3xl md:text-4xl lg:text-5xl mt-8 md:mt-12 italic tracking-[0.05em]"
+            className="font-serif text-2xl md:text-4xl lg:text-5xl mt-6 md:mt-12 italic tracking-[0.05em] text-white"
             style={{
-              color: '#7A0F1C',
               textShadow: '0 2px 10px rgba(0,0,0,0.2)'
             }}
           >
