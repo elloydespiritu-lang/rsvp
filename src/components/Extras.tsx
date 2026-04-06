@@ -8,8 +8,7 @@ export default function DressCode() {
         <motion.div 
           className="max-w-[700px] mx-auto p-8 bg-white rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-maroon/10 flex flex-col items-center text-center"
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <div className="w-20 h-20 rounded-full border border-maroon/20 flex items-center justify-center mb-8 text-maroon bg-white shadow-[0_8px_30px_rgba(0,0,0,0.04)]">

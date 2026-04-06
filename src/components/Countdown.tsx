@@ -79,8 +79,7 @@ export default function Countdown({ targetDate }: CountdownProps) {
       <div className="relative z-30 w-full max-w-6xl mx-auto px-6 text-center pb-6 md:pb-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-3xl mx-auto place-items-center">
@@ -89,8 +88,7 @@ export default function Countdown({ targetDate }: CountdownProps) {
                 key={unit.label}
                 className="flex flex-col items-center w-full"
                 initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{ 
                   delay: index * 0.1, 
                   duration: 0.8, 

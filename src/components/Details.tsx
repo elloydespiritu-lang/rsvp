@@ -8,8 +8,7 @@ export default function Details() {
         <motion.div 
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl mb-6 text-maroon-dark tracking-wide">The Details</h2>
@@ -25,8 +24,7 @@ export default function Details() {
           <motion.div 
             className="flex flex-col justify-between items-center text-center p-10 border border-maroon/10 rounded-[2rem] bg-white shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_60px_rgba(107,30,30,0.08)] transition-all duration-700 relative overflow-hidden group min-h-[200px]"
             initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-maroon/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -86,8 +84,7 @@ export default function Details() {
           <motion.div 
             className="flex flex-col justify-between items-center text-center p-10 border border-maroon/10 rounded-[2rem] bg-white shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_60px_rgba(107,30,30,0.08)] transition-all duration-700 relative overflow-hidden group min-h-[200px]"
             initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-maroon/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -143,8 +140,7 @@ export default function Details() {
         <motion.div 
           className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
             <h2 className="font-serif text-4xl md:text-5xl mb-6 text-maroon-dark tracking-wide">Notes</h2>
@@ -160,8 +156,7 @@ export default function Details() {
             <motion.div 
               className="text-center p-8 border border-maroon/10 rounded-[2rem] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_10px_30px_rgba(107,30,30,0.06)] transition-shadow duration-500 flex flex-col justify-between items-center group min-h-[200px]"
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
               <div className="max-w-[320px] mx-auto">
@@ -180,8 +175,7 @@ export default function Details() {
             <motion.div 
               className="text-center p-8 border border-maroon/10 rounded-[2rem] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_10px_30px_rgba(107,30,30,0.06)] transition-shadow duration-500 flex flex-col justify-between items-center group min-h-[200px]"
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15 }}
             >
               <div className="max-w-[320px] mx-auto">
@@ -202,8 +196,7 @@ export default function Details() {
             <motion.div 
               className="text-center p-8 border border-maroon/10 rounded-[2rem] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_10px_30px_rgba(107,30,30,0.06)] transition-shadow duration-500 flex flex-col justify-between items-center group min-h-[200px]"
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <div className="max-w-[320px] mx-auto">

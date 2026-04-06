@@ -64,23 +64,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div 
-        className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 md:left-[8%] lg:left-[10%] md:translate-x-0 w-full md:w-auto flex flex-col items-center md:items-start"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.5, duration: 1.5 }}
-      >
-        {/* Centered on the Discover More button */}
-        <div className="flex flex-col items-center w-full md:w-[180px] gap-3">
-          <span className="text-white/80 text-[9px] sm:text-[10px] uppercase tracking-[0.3em] font-sans font-light" style={{ textShadow: '0 2px 5px rgba(0,0,0,0.5)' }}>Scroll</span>
-          <motion.div 
-            className="w-[1px] h-12 sm:h-16 bg-gradient-to-b from-white/80 to-transparent"
-            animate={{ height: [0, 48, 0], opacity: [0, 1, 0], y: [0, 10, 20] }}
-            transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-          />
-        </div>
-      </motion.div>
     </section>
   );
 }

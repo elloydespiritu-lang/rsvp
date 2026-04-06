@@ -81,8 +81,7 @@ export default function RSVP({ inviteCode, guestName }: RSVPProps) {
         <motion.div 
           className="invitation-card relative overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
           {/* Decorative corners */}

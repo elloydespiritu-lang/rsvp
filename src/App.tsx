@@ -108,7 +108,7 @@ export default function App() {
 
   const handleOpenInvitation = () => {
     setIsOpened(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0 });
   };
 
   if (isLoading) {

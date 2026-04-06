@@ -9,8 +9,7 @@ export default function Notes() {
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
             <h2 className="font-serif text-4xl md:text-5xl mb-6 text-maroon-dark tracking-wide">Notes</h2>
@@ -26,8 +25,7 @@ export default function Notes() {
             <motion.div 
               className="text-center p-8 md:p-10 border border-maroon/10 rounded-[2rem] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_10px_30px_rgba(107,30,30,0.06)] transition-shadow duration-500 flex flex-col items-center group"
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
               <div className="w-14 h-14 rounded-full bg-rose-nude/30 flex items-center justify-center mb-6 text-maroon group-hover:scale-110 transition-transform duration-500 ease-out">
@@ -44,8 +42,7 @@ export default function Notes() {
             <motion.div 
               className="text-center p-8 md:p-10 border border-maroon/10 rounded-[2rem] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_10px_30px_rgba(107,30,30,0.06)] transition-shadow duration-500 flex flex-col items-center group"
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15 }}
             >
               <div className="w-14 h-14 rounded-full bg-rose-nude/30 flex items-center justify-center mb-6 text-maroon group-hover:scale-110 transition-transform duration-500 ease-out">
@@ -62,10 +59,9 @@ export default function Notes() {
 
             {/* Kids */}
             <motion.div 
-              className="text-center p-8 md:p-10 border border-maroon/10 rounded-[2rem] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_10px_30px_rgba(107,30,30,0.06)] transition-shadow duration-500 flex flex-col items-center group"
+              className="text-center p-8 md:p-10 border border-maroon/10 rounded-[2rem] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_10px_30_rgba(107,30,30,0.06)] transition-shadow duration-500 flex flex-col items-center group"
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <div className="w-14 h-14 rounded-full bg-rose-nude/30 flex items-center justify-center mb-6 text-maroon group-hover:scale-110 transition-transform duration-500 ease-out">
