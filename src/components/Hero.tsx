@@ -45,7 +45,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 1.2, ease: "easeOut" }}
-          className="flex flex-col items-start w-full"
+          className="flex flex-col items-start w-full mt-12 sm:mt-16 md:mt-0"
         >
           <div className="flex items-center gap-4 mb-8 md:mb-16">
             <div className="w-6 md:w-8 h-[1px] bg-white/40"></div>
