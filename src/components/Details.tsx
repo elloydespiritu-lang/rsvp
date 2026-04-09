@@ -33,11 +33,6 @@ export default function Details() {
             
             <div className="space-y-8 font-sans text-ink-light flex-grow flex flex-col items-center w-full max-w-[320px] mx-auto">
               <div className="flex flex-col items-center gap-3">
-                <Calendar className="text-maroon/70" size={24} strokeWidth={1.5} />
-                <p className="tracking-[0.3em] uppercase text-[11px] font-medium text-ink">Monday, May 18, 2026</p>
-              </div>
-              
-              <div className="flex flex-col items-center gap-3">
                 <Clock className="text-maroon/70" size={24} strokeWidth={1.5} />
                 <p className="tracking-[0.3em] uppercase text-[11px] font-medium text-ink">2:30 PM</p>
               </div>
@@ -94,7 +89,7 @@ export default function Details() {
             <div className="space-y-8 font-sans text-ink-light flex-grow flex flex-col items-center w-full max-w-[320px] mx-auto">
               <div className="flex flex-col items-center gap-3">
                 <Clock className="text-maroon/70" size={24} strokeWidth={1.5} />
-                <p className="tracking-[0.3em] uppercase text-[11px] font-medium text-ink">4:30 PM</p>
+                <p className="tracking-[0.3em] uppercase text-[11px] font-medium text-ink">5:00 PM</p>
               </div>
               
               <div className="flex flex-col items-center gap-4">
