@@ -1,7 +1,10 @@
-import { motion } from 'motion/react';
-import { MapPin, Clock, Calendar, Heart, Gift, Users } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { MapPin, Clock, Calendar, Heart, Gift, Users, X } from 'lucide-react';
 
 export default function Details() {
+  const [selectedQR, setSelectedQR] = useState<string | null>(null);
+
   return (
     <section className="py-20 bg-[#F7F4EF] text-ink relative overflow-hidden">
       <div className="max-w-[1100px] mx-auto px-5 relative z-10">
@@ -146,26 +149,7 @@ export default function Details() {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Gift Guide */}
-            <motion.div 
-              className="text-center p-8 border border-maroon/10 rounded-[2rem] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_10px_30px_rgba(107,30,30,0.06)] transition-shadow duration-500 flex flex-col justify-between items-center group min-h-[200px]"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="max-w-[320px] mx-auto">
-                <div className="w-14 h-14 rounded-full bg-rose-nude/30 flex items-center justify-center mb-6 mx-auto text-maroon group-hover:scale-110 transition-transform duration-500 ease-out">
-                  <Gift size={22} strokeWidth={1.5} />
-                </div>
-                <h3 className="font-serif text-2xl text-maroon-dark mb-4 italic tracking-wide">Gift Guide</h3>
-                <p className="font-sans text-ink-light leading-relaxed text-sm font-light tracking-wide">
-                  Our lives are graced with blessings bright, your presence and prayers our true delight. 
-                  Yet, should you wish to gift us more, a monetary offering we would adore.
-                </p>
-              </div>
-            </motion.div>
-
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             {/* Plus One */}
             <motion.div 
               className="text-center p-8 border border-maroon/10 rounded-[2rem] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_10px_30px_rgba(107,30,30,0.06)] transition-shadow duration-500 flex flex-col justify-between items-center group min-h-[200px]"
@@ -205,7 +189,120 @@ export default function Details() {
               </div>
             </motion.div>
           </div>
+
+          <div className="grid grid-cols-1">
+            {/* Gift Guide */}
+            <motion.div 
+              className="text-center p-8 md:p-12 border border-maroon/10 rounded-[2rem] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_10px_30px_rgba(107,30,30,0.06)] transition-shadow duration-500 flex flex-col items-center group"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="max-w-3xl mx-auto">
+                <div className="w-14 h-14 rounded-full bg-rose-nude/30 flex items-center justify-center mb-6 mx-auto text-maroon group-hover:scale-110 transition-transform duration-500 ease-out">
+                  <Gift size={22} strokeWidth={1.5} />
+                </div>
+                <h3 className="font-serif text-2xl text-maroon-dark mb-4 italic tracking-wide">Gift Guide</h3>
+                <p className="font-sans text-ink-light leading-relaxed text-sm font-light tracking-wide mb-12">
+                  Our lives are blessed by your presence and heartfelt prayers, which we truly cherish.
+                  Should you wish to honor us with a gift, a monetary contribution would be deeply appreciated.
+                  For your convenience, you may use the QR codes below.
+                </p>
+
+                <div className="pt-10 border-t border-maroon/5 w-full">
+                  <h4 className="font-serif text-xl text-maroon-dark mb-8 italic tracking-wide">Online Banking / Cash Gift Options</h4>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                    {/* GCash */}
+                    <div className="flex flex-col items-center gap-4">
+                      <div 
+                        className="bg-white p-4 rounded-2xl shadow-md border border-maroon/5 cursor-pointer hover:shadow-xl transition-all duration-300 group/qr relative overflow-hidden"
+                        onClick={() => setSelectedQR('https://res.cloudinary.com/dyku3hrtp/image/upload/v1775704648/gcash_mhpcho.jpg')}
+                      >
+                        <img 
+                          src="https://res.cloudinary.com/dyku3hrtp/image/upload/v1775704648/gcash_mhpcho.jpg" 
+                          alt="GCash QR Code" 
+                          className="w-48 h-48 object-contain rounded-lg transition-transform duration-500 group-hover/qr:scale-105"
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none';
+                            const fallback = e.currentTarget.parentElement?.querySelector('.qr-fallback');
+                            if (fallback) fallback.classList.remove('hidden');
+                          }}
+                        />
+                        <div className="qr-fallback hidden text-xs text-maroon/60 py-20 px-4">
+                          Online gift options will be available soon.
+                        </div>
+                        <div className="absolute inset-0 bg-maroon/5 opacity-0 group-hover/qr:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                          <span className="bg-white/90 text-maroon text-[10px] uppercase tracking-[0.2em] px-3 py-1.5 rounded-full shadow-sm">Click to enlarge</span>
+                        </div>
+                      </div>
+                      <span className="font-sans text-[11px] font-medium uppercase tracking-[0.2em] text-maroon-dark">GCash</span>
+                    </div>
+
+                    {/* BPI */}
+                    <div className="flex flex-col items-center gap-4">
+                      <div 
+                        className="bg-white p-4 rounded-2xl shadow-md border border-maroon/5 cursor-pointer hover:shadow-xl transition-all duration-300 group/qr relative overflow-hidden"
+                        onClick={() => setSelectedQR('https://res.cloudinary.com/dyku3hrtp/image/upload/v1775704577/BPI_wbgwlc.jpg')}
+                      >
+                        <img 
+                          src="https://res.cloudinary.com/dyku3hrtp/image/upload/v1775704577/BPI_wbgwlc.jpg" 
+                          alt="BPI QR Code" 
+                          className="w-48 h-48 object-contain rounded-lg transition-transform duration-500 group-hover/qr:scale-105"
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none';
+                            const fallback = e.currentTarget.parentElement?.querySelector('.qr-fallback');
+                            if (fallback) fallback.classList.remove('hidden');
+                          }}
+                        />
+                        <div className="qr-fallback hidden text-xs text-maroon/60 py-20 px-4">
+                          Online gift options will be available soon.
+                        </div>
+                        <div className="absolute inset-0 bg-maroon/5 opacity-0 group-hover/qr:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                          <span className="bg-white/90 text-maroon text-[10px] uppercase tracking-[0.2em] px-3 py-1.5 rounded-full shadow-sm">Click to enlarge</span>
+                        </div>
+                      </div>
+                      <span className="font-sans text-[11px] font-medium uppercase tracking-[0.2em] text-maroon-dark">BPI</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
       </div>
+
+      <AnimatePresence>
+        {selectedQR && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedQR(null)}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative max-w-lg w-full bg-white p-4 rounded-[2rem] shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button 
+                onClick={() => setSelectedQR(null)}
+                className="absolute -top-12 right-0 text-white hover:text-rose-nude transition-colors"
+                aria-label="Close modal"
+              >
+                <X size={32} />
+              </button>
+              <img 
+                src={selectedQR} 
+                alt="Enlarged QR Code" 
+                className="w-full h-auto rounded-2xl"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
