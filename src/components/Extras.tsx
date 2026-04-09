@@ -14,7 +14,7 @@ export default function DressCode() {
           <div className="w-20 h-20 rounded-full border border-maroon/20 flex items-center justify-center mb-8 text-maroon bg-white shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
             <Shirt size={32} strokeWidth={1.5} />
           </div>
-          <h3 className="font-serif text-4xl md:text-5xl mb-12 italic text-maroon-dark tracking-wide text-center">Dress Code:</h3>
+          <h3 className="font-serif text-4xl md:text-5xl mb-12 italic text-maroon-dark tracking-wide text-center">Dress Code</h3>
           <div className="flex gap-8 justify-center flex-wrap">
             <div className="flex flex-col items-center gap-3 group">
               <div className="w-16 h-16 rounded-full bg-maroon-dark shadow-[0_4px_20px_rgba(0,0,0,0.1)] border border-white/50 transform group-hover:scale-110 transition-transform duration-500 ease-out" title="Deep Maroon"></div>
